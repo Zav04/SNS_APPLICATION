@@ -28,6 +28,8 @@ namespace LoadAplication
         {
 
             label1.Visible = true;
+            button1.Visible = false;
+            button2.Visible=false;
             this.timer1.Start();
         }
 
@@ -42,6 +44,13 @@ namespace LoadAplication
                 Login.Login newFormLogin = new Login.Login();
                 newFormLogin.Show();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();
+
         }
     }
 }

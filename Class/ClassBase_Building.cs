@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Class
 {
-    internal class ClassBase_Building
+    class ClassBase_Building
     {
+
+
+
+
+
     }
 }
