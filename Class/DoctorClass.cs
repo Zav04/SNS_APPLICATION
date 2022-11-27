@@ -18,27 +18,22 @@ namespace Class
         DoctorSpecialty specialty;
 
 
-        /// <summary>
-        /// This variable goes to ClassBase_Persons
-        /// </summary>
-        /// <param name="pName"></param>
-        /// <param name="pAge"></param>
-        /// <param name="pCCNumber"></param>
-        /// <param name="pCCNIF"></param>
-        /// <param name="pCCSNS"></param>
-        /// <param name="pccSS"></param>
-        /// <param name="pdateOfBirth"></param>
-        /// <param name="dSpecialty"></param>
-
-        public Doctor(string pName, int pAge, string[] pCCNumber, int[] pCCNIF, int[] pCCSNS, int[] pccSS, DateTime pdateOfBirth,DoctorSpecialty dSpecialty) 
-            :base(pName, pAge, pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
+        public Doctor(string pName, int pAge,string pRue, string pCCNumber, int pCCNIF, int pCCSNS, int pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
+            :base(pName, pAge, pRue, pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
         {
 
-            specialty = dSpecialty;
+            this.specialty = dSpecialty;
 
         }
 
-    
+
+        /// <summary>
+        /// Specialty of doctor
+        /// The other variables are from class base
+        /// </summary>
+        public DoctorSpecialty Specialty { get; private set; }
+ 
+
 
     }
 }
