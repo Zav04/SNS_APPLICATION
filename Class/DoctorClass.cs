@@ -15,23 +15,23 @@ namespace Class
     public class Doctor : ClassBase_Persons
     {
 
-        DoctorSpecialty specialty;
-
+       //private DoctorSpecialty specialty;
 
         public Doctor(string pName, int pAge,string pRue, string pCCNumber, int pCCNIF, int pCCSNS, int pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
             :base(pName, pAge, pRue, pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
         {
 
-            this.specialty = dSpecialty;
+            this.Specialty = dSpecialty;
 
         }
+        ~Doctor(){ }
 
 
         /// <summary>
         /// Specialty of doctor
         /// The other variables are from class base
         /// </summary>
-        public DoctorSpecialty Specialty { get; private set; }
+        public DoctorSpecialty Specialty { get; set; }
  
 
 

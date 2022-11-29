@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Class\Class.csproj" />
     <ProjectReference Include="..\Incialization\Login.csproj" />
   </ItemGroup>
 

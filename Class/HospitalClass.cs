@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class
 {
-    internal class HospitalClass
+    public class HospitalClass
     {
     }
 }

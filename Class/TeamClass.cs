@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Class
 {
-    internal class TeamClass
+    public class TeamClass
     {
+
+
+
     }
 }
