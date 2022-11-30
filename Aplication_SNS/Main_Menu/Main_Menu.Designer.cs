@@ -36,9 +36,9 @@ namespace Main_Menu
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(671, 139);
+            this.button1.Location = new System.Drawing.Point(1479, 954);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(428, 194);
+            this.button1.Size = new System.Drawing.Size(109, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;

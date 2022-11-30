@@ -61,6 +61,7 @@ namespace LoadAplication
                 dynamic newdoct = new Doctor("Bruno", 23, "RUA Ouvinho Favelhos", "30038825ZY0", 271251350, 0124567897, 156354321, "06/06/1999", DoctorSpecialty.Cardiologist);
 
                 AuthorList.Add(newdoct);
+                
             }
            
             //Doctor newdoct = new Doctor("Bruno", 23, "RUA Ouvinho Favelhos", "30038825ZY0", 271251350, 0124567897, 156354321, "06/06/1999", DoctorSpecialty.Cardiologist);

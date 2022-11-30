@@ -104,7 +104,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(516, 311);
+            this.ClientSize = new System.Drawing.Size(516, 312);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
