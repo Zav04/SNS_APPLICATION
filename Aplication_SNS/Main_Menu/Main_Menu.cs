@@ -16,5 +16,10 @@ namespace Main_Menu
         {
             Application.Exit();
         }
+
+        private void Report_MainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
