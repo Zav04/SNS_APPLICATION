@@ -45,7 +45,7 @@ namespace Menus
         private void logout_MainMenu_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login_Menu loginmenu = new Login_Menu();
+            Login loginmenu = new Login();
             loginmenu.Show();
         }
 

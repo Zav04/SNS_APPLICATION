@@ -18,7 +18,7 @@ namespace Menus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Menu());
+            Application.Run(new Login());
         }
 
     }
