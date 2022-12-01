@@ -114,6 +114,7 @@ namespace Menus
             this.infoVersion_MainMenu.Size = new System.Drawing.Size(45, 45);
             this.infoVersion_MainMenu.TabIndex = 14;
             this.infoVersion_MainMenu.UseVisualStyleBackColor = true;
+            this.infoVersion_MainMenu.Click += new System.EventHandler(this.infoVersion_MainMenu_Click);
             // 
             // label1
             // 

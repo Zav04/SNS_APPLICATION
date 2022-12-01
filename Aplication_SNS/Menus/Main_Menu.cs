@@ -73,5 +73,6 @@ namespace Menus
             FileVersionInfo fileVersion = FileVersionInfo.GetVersionInfo(assembly.Location);
             return fileVersion.FileVersion;
         }
+
     }
 }
