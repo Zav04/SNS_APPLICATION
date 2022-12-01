@@ -8,8 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>ebce1b1c-86f0-402b-bdff-4e23b519f5bf</UserSecretsId>
     <Platforms>AnyCPU;x64</Platforms>
-    <AssemblyVersion>1.0.0.29</AssemblyVersion>
-    <FileVersion>1.0.0.22</FileVersion>
+    <AssemblyVersion>1.0.0.45</AssemblyVersion>
+    <FileVersion>1.0.0.38</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Hospital_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
