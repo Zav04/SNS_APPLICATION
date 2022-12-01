@@ -2,9 +2,9 @@ using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-using Main_Menu;
+using Menus.Properties;
 
-namespace Login
+namespace Menus
 {
     public partial class Login : Form
     {
@@ -66,8 +66,14 @@ namespace Login
             {
 
                 this.Hide();
-                Main_Menu.Main_Menu main_Menu = new Main_Menu.Main_Menu();
+                Menus.Main_Menu main_Menu = new Menus.Main_Menu();
                 main_Menu.Show();
+
+
+
+
+
+
 
             }
 

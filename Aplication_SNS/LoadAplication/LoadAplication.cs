@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Login;
-using Class;
+using Menus;
+
 
 namespace LoadAplication
 {
@@ -41,7 +41,7 @@ namespace LoadAplication
             {
                 timer1.Stop();
                 this.Hide();
-                Login.Login newFormLogin = new Login.Login();
+                Login newFormLogin = new Login();
                 newFormLogin.Show();
             }
         }
@@ -55,14 +55,14 @@ namespace LoadAplication
 
         private void LoadAplication_Load(object sender, EventArgs e)
         {
-            List<Doctor> AuthorList = new List<Doctor>();
-            for (int i = 0; i < 10; i++)
-            {
-                dynamic newdoct = new Doctor("Bruno", 23, "RUA Ouvinho Favelhos", "30038825ZY0", 271251350, 0124567897, 156354321, "06/06/1999", DoctorSpecialty.Cardiologist);
+            //List<Doctor> AuthorList = new List<Doctor>();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    dynamic newdoct = new Doctor("Bruno", 23, "RUA Ouvinho Favelhos", "30038825ZY0", 271251350, 0124567897, 156354321, "06/06/1999", DoctorSpecialty.Cardiologist);
 
-                AuthorList.Add(newdoct);
+            //    AuthorList.Add(newdoct);
                 
-            }
+            //}
            
             //Doctor newdoct = new Doctor("Bruno", 23, "RUA Ouvinho Favelhos", "30038825ZY0", 271251350, 0124567897, 156354321, "06/06/1999", DoctorSpecialty.Cardiologist);
 

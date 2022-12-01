@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Main_Menu
+namespace Menus
 {
     internal class MainMenu_Main
     {
