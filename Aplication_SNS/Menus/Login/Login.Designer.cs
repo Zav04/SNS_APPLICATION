@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-namespace Menus
+namespace Menus.Log
 {
     partial class Login
     {

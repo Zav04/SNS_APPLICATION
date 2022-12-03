@@ -3,10 +3,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
-using Menus;
 using System.Diagnostics;
+using Menus.Log;
+using Menus.Hospital;
 
-namespace Menus
+namespace Menus.MainMenu
 {
     public partial class Main_Menu : Form
     {
@@ -74,5 +75,11 @@ namespace Menus
             return fileVersion.FileVersion;
         }
 
+        private void hospital_MainMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Hospital_Menu hospital_Menu = new Hospital_Menu();
+            hospital_Menu.Show();
+        }
     }
 }

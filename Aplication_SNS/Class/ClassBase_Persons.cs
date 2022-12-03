@@ -9,7 +9,7 @@ namespace Class
     public class ClassBase_Persons
     {
         
-        public ClassBase_Persons(string pName, int pAge, string pRue,string pCCNumber, int pCCNIF, int pCCSNS, int pccSS, string pdateOfBirth) 
+        public ClassBase_Persons(string pName, uint pAge, string pRue,string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth) 
         {
             this.Name = pName;
             this.Age = pAge;
@@ -35,7 +35,7 @@ namespace Class
         /// <summary>
         /// Propertie Age
         /// </summary>
-        public int Age { get; set; }
+        public uint Age { get; set; }
 
         /// <summary>
         /// Propertie Rue
@@ -50,17 +50,17 @@ namespace Class
         /// <summary>
         /// Propertie CC NIF
         /// </summary>
-        public int CCNIF { get; set; }
+        public uint CCNIF { get; set; }
 
         /// <summary>
         /// Propertie CC SNS
         /// </summary>
-        public int CCSNS { get; set; }
+        public uint CCSNS { get; set; }
 
         /// <summary>
         /// Propertie CC Segurança Social
         /// </summary>
-        public int CCSS { get; set; }
+        public uint CCSS { get; set; }
 
         /// <summary>
         /// Propertie Date of Birth

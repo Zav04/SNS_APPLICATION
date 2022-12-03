@@ -2,9 +2,9 @@ using System;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-using Menus.Properties;
+using Menus.MainMenu;
 
-namespace Menus
+namespace Menus.Log
 {
     public partial class Login : Form
     {
@@ -65,8 +65,8 @@ namespace Menus
             if(password_Login.Text == "admin" && userName_Login.Text == "admin")
             {
 
-                this.Hide();
-                Menus.Main_Menu main_Menu = new Menus.Main_Menu();
+                this.Close();
+                Main_Menu main_Menu = new Main_Menu();
                 main_Menu.Show();
 
 

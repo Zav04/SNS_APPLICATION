@@ -17,7 +17,7 @@ namespace Class
 
        //private DoctorSpecialty specialty;
 
-        public Doctor(string pName, int pAge,string pRue, string pCCNumber, int pCCNIF, int pCCSNS, int pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
+        public Doctor(string pName, uint pAge,string pRue, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
             :base(pName, pAge, pRue, pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
         {
 

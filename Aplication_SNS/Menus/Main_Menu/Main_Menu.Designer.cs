@@ -1,7 +1,7 @@
 ﻿using System.Resources;
 using System.Xml.Linq;
 
-namespace Menus
+namespace Menus.MainMenu
 {
     partial class Main_Menu
     {
@@ -66,6 +66,7 @@ namespace Menus
             this.hospital_MainMenu.Size = new System.Drawing.Size(300, 350);
             this.hospital_MainMenu.TabIndex = 9;
             this.hospital_MainMenu.UseVisualStyleBackColor = true;
+            this.hospital_MainMenu.Click += new System.EventHandler(this.hospital_MainMenu_Click);
             // 
             // staff_MainMenu
             // 
@@ -114,6 +115,7 @@ namespace Menus
             this.infoVersion_MainMenu.Size = new System.Drawing.Size(45, 45);
             this.infoVersion_MainMenu.TabIndex = 14;
             this.infoVersion_MainMenu.UseVisualStyleBackColor = true;
+            this.infoVersion_MainMenu.Click += new System.EventHandler(this.infoVersion_MainMenu_Click);
             // 
             // label1
             // 

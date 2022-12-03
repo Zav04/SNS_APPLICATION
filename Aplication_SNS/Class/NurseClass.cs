@@ -13,7 +13,7 @@ namespace Class
         /// Contrcutor of Nurse
         /// </summary>
 
-        public NurseClass(string pName, int pAge, string pRue, string pCCNumber, int pCCNIF, int pCCSNS, int pccSS, string pdateOfBirth)
+        public NurseClass(string pName, uint pAge, string pRue, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth)
             : base(pName, pAge, pRue, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
