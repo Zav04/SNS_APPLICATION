@@ -1,10 +1,10 @@
 using System;
 using System.Windows.Controls;
-using Class.Person;
+using Class.CPerson;
 using Portugal.District;
 using Portugal.City;
 
-namespace Class.Doctor
+namespace Class.CDoctor
 {
 
     public enum DoctorSpecialty

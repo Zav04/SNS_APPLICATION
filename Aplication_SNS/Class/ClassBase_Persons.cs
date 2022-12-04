@@ -7,7 +7,7 @@ using Portugal.District;
 using Portugal.City;
 
 
-namespace Class.Person
+namespace Class.CPerson
 {
     public class ClassBase_Persons
     {

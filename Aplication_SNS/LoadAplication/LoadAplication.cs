@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menus.Log;
 
-
 namespace LoadAplication
 {
     public partial class LoadAplication : Form
@@ -75,10 +74,9 @@ namespace LoadAplication
             //int teste4 = newdoct.CCSS;
             //string date = newdoct.DateOfBirth;
             //DoctorSpecialty teste14 = newdoct.Specialty;
-
-
-
-
         }
+
+
+
     }
 }

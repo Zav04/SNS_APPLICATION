@@ -1,4 +1,4 @@
-﻿namespace Menus.Hospital
+﻿namespace Menus.FHospital
 {
     partial class Hospital_Menu
     {

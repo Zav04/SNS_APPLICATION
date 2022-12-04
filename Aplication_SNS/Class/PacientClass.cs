@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Class.Person;
+using Class.CPerson;
 using Portugal.District;
 using Portugal.City;
 
 
-namespace Class.Pacient
+namespace Class.CPacient
 {
     public class PacientClass : ClassBase_Persons 
     {

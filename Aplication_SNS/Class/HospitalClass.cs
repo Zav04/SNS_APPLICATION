@@ -7,12 +7,12 @@ using Class.Building;
 using Portugal.City;
 using Portugal.District;
 
-namespace Class.Hospital
+namespace Class.CHospital
 {
-    public class HospitalClass : ClassBase_Building
+    public class Hospital : ClassBase_Building
     {
 
-        public HospitalClass(string bName, string bRue, District bDistrict, City bCity, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds) 
+        public Hospital(string bName, string bRue, District bDistrict, City bCity, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds) 
             : base(bRue, bDistrict, bCity,bNumberofFlors, bNumberofRoms, bNumberofBeds)
         {
             this.Name = bName;
@@ -23,7 +23,7 @@ namespace Class.Hospital
         /// <summary>
         /// Destructor of object
         /// </summary>
-        ~HospitalClass() { }
+        ~Hospital() { }
 
         /// <summary>
         /// Propertie Rue

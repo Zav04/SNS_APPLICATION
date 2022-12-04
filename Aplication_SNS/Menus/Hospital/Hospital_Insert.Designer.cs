@@ -37,6 +37,7 @@ namespace Menus.HospitalInsert
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -60,12 +61,6 @@ namespace Menus.HospitalInsert
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(218, 23);
             this.comboBox1.TabIndex = 2;
-            foreach (District district in (District[])Enum.GetValues(typeof(District)))
-            {
-
-                comboBox1.Items.Add(district);
-
-            }
             // 
             // comboBox2
             // 
@@ -74,12 +69,6 @@ namespace Menus.HospitalInsert
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(218, 23);
             this.comboBox2.TabIndex = 3;
-            foreach (City city in (City[])Enum.GetValues(typeof(City)))
-            {
-
-                comboBox2.Items.Add(city);
-
-            }
             // 
             // comboBox3
             // 
@@ -88,10 +77,6 @@ namespace Menus.HospitalInsert
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(218, 23);
             this.comboBox3.TabIndex = 4;
-            for (int i = 0; i <= 100; i++)
-            {
-                comboBox3.Items.Add(i);
-            }
             // 
             // comboBox4
             // 
@@ -100,16 +85,23 @@ namespace Menus.HospitalInsert
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(218, 23);
             this.comboBox4.TabIndex = 5;
-            for (int i = 0; i <= 100; i++)
-            {
-                comboBox4.Items.Add(i);
-            }
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(607, 375);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Hospital_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1083, 469);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -118,6 +110,7 @@ namespace Menus.HospitalInsert
             this.Controls.Add(this.textBox1);
             this.Name = "Hospital_Insert";
             this.Text = "Hospital_Insert";
+            this.Load += new System.EventHandler(this.Hospital_Insert_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +124,6 @@ namespace Menus.HospitalInsert
         private ComboBox comboBox2;
         private ComboBox comboBox3;
         private ComboBox comboBox4;
+        private Button button1;
     }
 }

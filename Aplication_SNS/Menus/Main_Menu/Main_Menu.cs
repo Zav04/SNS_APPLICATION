@@ -5,12 +5,16 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics;
 using Menus.Log;
-using Menus.Hospital;
+using Menus.FHospital;
+using Class.ManagerOfData;
+
+
 
 namespace Menus.MainMenu
 {
     public partial class Main_Menu : Form
     {
+
         public Main_Menu()
         {
             InitializeComponent();
@@ -18,7 +22,7 @@ namespace Menus.MainMenu
 
         private void Main_Menu_Load(object sender, EventArgs e)
         {
-
+            Class_Manager.ReadDataOfHospital();
         }
 
         private void report_MainMenu_Click(object sender, EventArgs e)
