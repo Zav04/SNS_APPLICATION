@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Class.ManagerOfData;
 using Menus.Log;
+using Class.ManagerOfData;
 
 namespace LoadAplication
 {
@@ -29,6 +31,10 @@ namespace LoadAplication
             label1.Visible = true;
             button1.Visible = false;
             button2.Visible=false;
+            Class_Manager.ReadDataOfDoctors();
+            Class_Manager.ReadDataOfNurse();
+            Class_Manager.ReadDataOfDoctors();
+            Class_Manager.ReadDataOfHospital();
             this.timer1.Start();
         }
 

@@ -50,5 +50,6 @@ namespace Menus.HospitalView
             Hospital_Menu hospital_Menu=new Hospital_Menu();
             hospital_Menu.Show();
         }
+
     }
 }

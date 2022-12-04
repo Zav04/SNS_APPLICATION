@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Class.Building;
 using Portugal.City;
 using Portugal.District;
-
 namespace Class.CHospital
 {
     public class Hospital : ClassBase_Building
