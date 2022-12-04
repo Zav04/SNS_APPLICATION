@@ -8,8 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
-using Class;
 using Menus.HospitalView;
+using Menus.MainMenu;
+using Class.Hospital;
+using Portugal.District;
+using Portugal.City;
+using Menus.HospitalInsert;
 
 namespace Menus.Hospital
 {
@@ -24,16 +28,19 @@ namespace Menus.Hospital
 
         private void Hospital_Menu_Load(object sender, EventArgs e)
         {
-            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", 2, 2, 2));
-            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", 3, 3, 3));
-            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", 3, 3, 3));
-            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", 3, 3, 3));
-            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", 3, 3, 3));
-            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", 3, 3, 3));
+            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", District.Braga, City.Guimarães, 2, 2, 2));
+            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", District.Braga, City.Guimarães, 3, 3, 3));
+            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", District.Braga, City.Guimarães, 4, 4, 4));
+            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", District.Braga, City.Guimarães, 5, 5, 5));
+            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", District.Braga, City.Guimarães, 6, 6, 6));
+            MyMenuItems.Add(new HospitalClass("Bruno", "Rua", District.Braga, City.Guimarães, 7, 7, 7));
         }
 
         private void Hospital_Insert_Click(object sender, EventArgs e)
         {
+            this.Close();
+            Hospital_Insert hospital_View = new Hospital_Insert(MyMenuItems);
+            hospital_View.Show();
 
         }
 
@@ -50,11 +57,16 @@ namespace Menus.Hospital
         private void Hospital_View_Click(object sender, EventArgs e)
         {
             this.Close();
-            Hospital_View hospital_View= new Hospital_View();
+            Hospital_View hospital_View= new Hospital_View(MyMenuItems);
             hospital_View.Show();
-
-
         }
 
+        private void BACK_Hospital_Menu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Main_Menu mainMenu = new Main_Menu();
+            mainMenu.Show();
+
+        }
     }
 }

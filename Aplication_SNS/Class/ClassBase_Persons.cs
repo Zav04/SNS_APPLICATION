@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Portugal.District;
+using Portugal.City;
 
-namespace Class
+
+namespace Class.Person
 {
     public class ClassBase_Persons
     {
-        
-        public ClassBase_Persons(string pName, uint pAge, string pRue,string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth) 
+       
+
+        public ClassBase_Persons(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth) 
         {
             this.Name = pName;
             this.Age = pAge;
             this.Rue = pRue;
+            this.District = pDistrict;
+            this.City = pCity; 
             this.CCNumber = pCCNumber;
             this.CCNIF = pCCNIF;
             this.CCSNS = pCCSNS;
@@ -41,6 +47,17 @@ namespace Class
         /// Propertie Rue
         /// </summary>
         public string Rue { get; set; }
+
+        /// <summary>
+        /// Propertie District
+        /// </summary>
+        public District District { get; set; }
+
+        /// <summary>
+        /// Propertie City
+        /// </summary>
+        public City City { get; set; }
+
 
         /// <summary>
         /// Propertie CC Number

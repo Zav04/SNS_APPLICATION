@@ -28,26 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hospital_View));
             this.Hospital_View_Table = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.Hospital_View_Table)).BeginInit();
             this.SuspendLayout();
             // 
             // Hospital_View_Table
             // 
+            this.Hospital_View_Table.BackgroundColor = System.Drawing.SystemColors.Control;
             this.Hospital_View_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Hospital_View_Table.Location = new System.Drawing.Point(12, 31);
             this.Hospital_View_Table.Name = "Hospital_View_Table";
             this.Hospital_View_Table.RowTemplate.Height = 25;
-            this.Hospital_View_Table.Size = new System.Drawing.Size(776, 395);
+            this.Hospital_View_Table.Size = new System.Drawing.Size(1547, 799);
             this.Hospital_View_Table.TabIndex = 0;
             // 
             // Hospital_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1584, 961);
             this.Controls.Add(this.Hospital_View_Table);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hospital_View";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hospital_View";
             this.Load += new System.EventHandler(this.Hospital_View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Hospital_View_Table)).EndInit();

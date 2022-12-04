@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Portugal.City;
+using Portugal.District;
 
-namespace Class
+namespace Class.Building
 {
     public class ClassBase_Building
     {
 
-        public ClassBase_Building(string bRue, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds)
+        public ClassBase_Building(string bRue, District bDistrict, City bCity, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds)
         {
             this.Rue = bRue;
+            this.District = bDistrict;
+            this.City = bCity;
             this.NumberOfFlors = bNumberofFlors;
             this.NumberOfRoms = bNumberofRoms;
             this.NumberOfFlors = bNumberofFlors;
+            this.NumberofBeds= bNumberofBeds; 
         }
 
 
@@ -29,6 +34,16 @@ namespace Class
         public string Rue { get; set; }
 
         /// <summary>
+        /// Propertie Rue
+        /// </summary>
+        public District District { get; set; }
+
+        /// <summary>
+        /// Propertie Rue
+        /// </summary>
+        public City City { get; set; }
+
+        /// <summary>
         /// Propertie Number of floor of a Building
         /// </summary>
         public uint NumberOfFlors { get; set; }
@@ -41,7 +56,7 @@ namespace Class
         /// <summary>
         /// Propertie Number of beds in a Building
         /// </summary>
-        public uint bNumberofBeds { get; set; }
+        public uint NumberofBeds { get; set; }
 
        
 

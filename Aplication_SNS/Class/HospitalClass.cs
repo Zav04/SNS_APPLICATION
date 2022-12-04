@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Class.Building;
+using Portugal.City;
+using Portugal.District;
 
-namespace Class
+namespace Class.Hospital
 {
     public class HospitalClass : ClassBase_Building
     {
 
-        public HospitalClass(string Name, string bRue, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds) : base(bRue, bNumberofFlors, bNumberofRoms, bNumberofBeds)
+        public HospitalClass(string bName, string bRue, District bDistrict, City bCity, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds) 
+            : base(bRue, bDistrict, bCity,bNumberofFlors, bNumberofRoms, bNumberofBeds)
         {
-            this.Name = bRue;
+            this.Name = bName;
 
         }
 

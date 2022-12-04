@@ -1,7 +1,10 @@
 using System;
 using System.Windows.Controls;
+using Class.Person;
+using Portugal.District;
+using Portugal.City;
 
-namespace Class
+namespace Class.Doctor
 {
 
     public enum DoctorSpecialty
@@ -17,8 +20,8 @@ namespace Class
 
        //private DoctorSpecialty specialty;
 
-        public Doctor(string pName, uint pAge,string pRue, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
-            :base(pName, pAge, pRue, pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
+        public Doctor(string pName, uint pAge,string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
+            :base(pName, pAge, pRue, pDistrict, pCity,pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
         {
 
             this.Specialty = dSpecialty;

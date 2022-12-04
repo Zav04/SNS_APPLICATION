@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Class.Person;
+using Portugal.District;
+using Portugal.City;
 
 
-namespace Class
+namespace Class.Pacient
 {
     public class PacientClass : ClassBase_Persons 
     {
@@ -14,8 +17,8 @@ namespace Class
         /// Contrcutor of Nurse
         /// </summary>
 
-        public PacientClass(string pName, uint pAge, string pRue, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth)
-            : base(pName, pAge, pRue, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
+        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth)
+            : base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
             //this.Specialty = dSpecialty;

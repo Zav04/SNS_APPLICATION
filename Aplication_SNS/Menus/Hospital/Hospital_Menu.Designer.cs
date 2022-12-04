@@ -36,6 +36,7 @@
             this.Hospital_Edit = new System.Windows.Forms.Button();
             this.Hospital_Delete = new System.Windows.Forms.Button();
             this.Hospital_View = new System.Windows.Forms.Button();
+            this.BACK_Hospital_Menu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -116,12 +117,24 @@
             this.Hospital_View.UseVisualStyleBackColor = true;
             this.Hospital_View.Click += new System.EventHandler(this.Hospital_View_Click);
             // 
+            // BACK_Hospital_Menu
+            // 
+            this.BACK_Hospital_Menu.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BACK_Hospital_Menu.Location = new System.Drawing.Point(1455, 932);
+            this.BACK_Hospital_Menu.Name = "BACK_Hospital_Menu";
+            this.BACK_Hospital_Menu.Size = new System.Drawing.Size(134, 56);
+            this.BACK_Hospital_Menu.TabIndex = 16;
+            this.BACK_Hospital_Menu.Text = "BACK";
+            this.BACK_Hospital_Menu.UseVisualStyleBackColor = true;
+            this.BACK_Hospital_Menu.Click += new System.EventHandler(this.BACK_Hospital_Menu_Click);
+            // 
             // Hospital_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 1000);
+            this.Controls.Add(this.BACK_Hospital_Menu);
             this.Controls.Add(this.Hospital_View);
             this.Controls.Add(this.Hospital_Delete);
             this.Controls.Add(this.Hospital_Edit);
@@ -151,5 +164,6 @@
         private Button Hospital_Edit;
         private Button Hospital_Delete;
         private Button Hospital_View;
+        private Button BACK_Hospital_Menu;
     }
 }
