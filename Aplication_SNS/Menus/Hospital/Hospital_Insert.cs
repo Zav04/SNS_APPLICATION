@@ -30,12 +30,13 @@ namespace Menus.HospitalInsert
                 comboBox1.Items.Add(district);
             foreach (City city in (City[])Enum.GetValues(typeof(City)))
                 comboBox2.Items.Add(city);
-            for (int i = 0; i <= 100; i++)
+            for (int i = 1; i <= 100; i++)
+            {
                 comboBox3.Items.Add(i);
-            for (int i = 0; i <= 100; i++)
                 comboBox4.Items.Add(i);
-            for (int i = 0; i <= 100; i++)
                 comboBox5.Items.Add(i);
+            }
+
         }
 
 
@@ -51,20 +52,38 @@ namespace Menus.HospitalInsert
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Hospital newInsert = new Hospital(
-            textBox1.Text,
-            textBox2.Text,
-            Enum.Parse<District>(comboBox1.GetItemText(this.comboBox1.SelectedItem)),
-            Enum.Parse<City>(comboBox2.GetItemText(this.comboBox2.SelectedItem)),
-            uint.Parse(comboBox3.SelectedItem.ToString()),
-            uint.Parse(comboBox4.SelectedItem.ToString()),
-            uint.Parse(comboBox5.SelectedItem.ToString())
-            );
+            if(
+            String.IsNullOrEmpty(textBox1.Text) != true &&
+            String.IsNullOrEmpty(textBox1.Text) != true &&
+            comboBox1.SelectedIndex != -1 &&
+            comboBox2.SelectedIndex != -1 &&
+            comboBox3.SelectedIndex != -1 &&
+            comboBox3.SelectedIndex != -1 &&
+            comboBox4.SelectedIndex != -1 &&
+            comboBox5.SelectedIndex != -1)
+            {
 
-            listofHospitalObejects = Class_Manager.GetDataOfHospital();
-            listofHospitalObejects.Add(newInsert);
+                Hospital newInsert = new Hospital(
+                    textBox1.Text,
+                    textBox2.Text,
+                    Enum.Parse<District>(comboBox1.GetItemText(this.comboBox1.SelectedItem)),
+                    Enum.Parse<City>(comboBox2.GetItemText(this.comboBox2.SelectedItem)),
+                    uint.Parse(comboBox3.SelectedItem.ToString()),
+                    uint.Parse(comboBox4.SelectedItem.ToString()),
+                    uint.Parse(comboBox5.SelectedItem.ToString()));
+
+                listofHospitalObejects = Class_Manager.GetDataOfHospital();
+                listofHospitalObejects.Add(newInsert);
+
+                MessageBox.Show("HOSPITAL INSERTED", "WARNING", MessageBoxButtons.OK);
+
+
+            }
+            else
+            MessageBox.Show("PROBLEM TO INSERT A NEW HOSPITAL, PLEASE VERIFY THE INPUTS", "ERROR", MessageBoxButtons.OK);
 
 
         }
     }
+
 }

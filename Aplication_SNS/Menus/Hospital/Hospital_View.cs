@@ -24,8 +24,11 @@ namespace Menus.HospitalView
         {
 
             DataTable hospitalTable = new DataTable();
+            hospitalTable.Columns.Add("ID", typeof(int));
             hospitalTable.Columns.Add("Name", typeof(string));
             hospitalTable.Columns.Add("Rue", typeof(string));
+            hospitalTable.Columns.Add("District", typeof(string));
+            hospitalTable.Columns.Add("City", typeof(string));
             hospitalTable.Columns.Add("Number of Flors", typeof(uint));
             hospitalTable.Columns.Add("Number of Rooms", typeof(uint));
             hospitalTable.Columns.Add("Number of Beds", typeof(uint));
@@ -37,11 +40,11 @@ namespace Menus.HospitalView
 
             foreach (var dataHospital in listofHospitalObejects)
             {
-                hospitalTable.Rows.Add(dataHospital.Name, dataHospital.Rue, dataHospital.NumberOfFlors, dataHospital.NumberOfRoms, dataHospital.NumberofBeds);
+                hospitalTable.Rows.Add(dataHospital.IdHospital, dataHospital.Name, dataHospital.Rue, dataHospital.District, dataHospital.City, dataHospital.NumberOfFlors, dataHospital.NumberOfRoms, dataHospital.NumberofBeds);
 
             }
 
-            Hospital_View_Table.DataSource= hospitalTable;
+            Hospital_View_Table.DataSource = hospitalTable;
         }
 
         private void button1_Click(object sender, EventArgs e)

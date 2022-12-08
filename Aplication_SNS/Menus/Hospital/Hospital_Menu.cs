@@ -14,6 +14,8 @@ using Class.CHospital;
 using Portugal.District;
 using Portugal.City;
 using Menus.HospitalInsert;
+using Menus.HospitalEdit;
+
 
 namespace Menus.FHospital
 {
@@ -32,7 +34,7 @@ namespace Menus.FHospital
 
         private void Hospital_Insert_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             Hospital_Insert hospital_View = new Hospital_Insert();
             hospital_View.Show();
 
@@ -40,6 +42,9 @@ namespace Menus.FHospital
 
         private void Hospital_Edit_Click(object sender, EventArgs e)
         {
+            this.Close();
+            Hospital_Edit newHospital_Edit= new Hospital_Edit();
+            newHospital_Edit.Show();
 
         }
 
@@ -50,16 +55,16 @@ namespace Menus.FHospital
 
         private void Hospital_View_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Hospital_View hospital_View= new Hospital_View();
-            hospital_View.Show();
+            this.Close();
+            Hospital_View newHospital_View= new Hospital_View();
+            newHospital_View.Show();
         }
 
         private void BACK_Hospital_Menu_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Main_Menu mainMenu = new Main_Menu();
-            mainMenu.Show();
+            this.Close();
+            Main_Menu newMainMenu = new Main_Menu();
+            newMainMenu.Show();
 
         }
     }

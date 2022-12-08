@@ -22,7 +22,7 @@ namespace Menus.MainMenu
 
         private void Main_Menu_Load(object sender, EventArgs e)
         {
-            Class_Manager.ReadDataOfHospital();
+
         }
 
         private void report_MainMenu_Click(object sender, EventArgs e)
