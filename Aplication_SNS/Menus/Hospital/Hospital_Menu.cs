@@ -15,6 +15,8 @@ using Portugal.District;
 using Portugal.City;
 using Menus.HospitalInsert;
 using Menus.HospitalEdit;
+using Menus.HospitalDelete;
+
 
 
 namespace Menus.FHospital
@@ -50,7 +52,9 @@ namespace Menus.FHospital
 
         private void Hospital_Delete_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Hospital_Delete newHospital_Remove = new Hospital_Delete();
+            newHospital_Remove.Show();
         }
 
         private void Hospital_View_Click(object sender, EventArgs e)

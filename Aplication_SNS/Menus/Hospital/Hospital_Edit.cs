@@ -121,32 +121,37 @@ namespace Menus.HospitalEdit
 
         private void Hospital_Edit_Edit_Click(object sender, EventArgs e)
         {
-
-            DialogResult getDialogResult = MessageBox.Show("ARE YOU SURE YOU WANT TO EDIT", "WARNING", MessageBoxButtons.YesNo);
-            if (getDialogResult == DialogResult.Yes)
+            if (Hospital_Edit_Table.SelectedRows.Count > 0)
             {
-                List<String> getDataFromRow = GetRowFromList();
-                int getId = int.Parse(getDataFromRow[0]);
-
-                List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
-
-                foreach (var objects in hospiatlObjects)
+                DialogResult getDialogResult = MessageBox.Show("ARE YOU SURE YOU WANT TO EDIT", "WARNING", MessageBoxButtons.YesNo);
+                if (getDialogResult == DialogResult.Yes)
                 {
-                    if (objects.IdHospital == getId)
+                    List<String> getDataFromRow = GetRowFromList();
+                    int getId = int.Parse(getDataFromRow[0]);
+
+                    List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
+
+                    foreach (var objects in hospiatlObjects)
                     {
-                        objects.Name = textBox1.Text;
-                        objects.Rue = textBox2.Text;
-                        objects.District = Enum.Parse<District>(comboBox1.GetItemText(this.comboBox1.SelectedItem));
-                        objects.City = Enum.Parse<City>(comboBox2.GetItemText(this.comboBox2.SelectedItem));
-                        objects.NumberOfFlors = uint.Parse(comboBox3.SelectedItem.ToString());
-                        objects.NumberOfRoms = uint.Parse(comboBox4.SelectedItem.ToString());
-                        objects.NumberofBeds = uint.Parse(comboBox5.SelectedItem.ToString());
-                        LoadDataToDataGrid();
+                        if (objects.IdHospital == getId)
+                        {
+                            objects.Name = textBox1.Text;
+                            objects.Rue = textBox2.Text;
+                            objects.District = Enum.Parse<District>(comboBox1.GetItemText(this.comboBox1.SelectedItem));
+                            objects.City = Enum.Parse<City>(comboBox2.GetItemText(this.comboBox2.SelectedItem));
+                            objects.NumberOfFlors = uint.Parse(comboBox3.SelectedItem.ToString());
+                            objects.NumberOfRoms = uint.Parse(comboBox4.SelectedItem.ToString());
+                            objects.NumberofBeds = uint.Parse(comboBox5.SelectedItem.ToString());
+                            LoadDataToDataGrid();
+                            break;
+                        }
+
                     }
 
                 }
-
             }
+            else
+                MessageBox.Show("SELECT A LINE TO EDIT A HOSPITAL FROM APLICATION", "WARNING", MessageBoxButtons.OK);
 
         }
     }
