@@ -230,6 +230,7 @@
             this.Hospital_Edit_Edit.Text = "EDIT";
             this.Hospital_Edit_Edit.UseVisualStyleBackColor = true;
             this.Hospital_Edit_Edit.Click += new System.EventHandler(this.Hospital_Edit_Edit_Click);
+
             // 
             // Hospital_Edit
             // 

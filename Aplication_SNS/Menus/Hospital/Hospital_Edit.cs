@@ -11,7 +11,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 
 namespace Menus.HospitalEdit
@@ -36,7 +35,14 @@ namespace Menus.HospitalEdit
                 comboBox5.Items.Add(i);
             }
 
+            LoadDataToDataGrid();
 
+
+        }
+
+
+        private void LoadDataToDataGrid()
+        {
             DataTable hospitalTable = new DataTable();
             hospitalTable.Columns.Add("ID", typeof(int));
             hospitalTable.Columns.Add("Name", typeof(string));
@@ -49,21 +55,22 @@ namespace Menus.HospitalEdit
             Hospital_Edit_Table.ReadOnly = true;
             Hospital_Edit_Table.AllowUserToAddRows = false;
 
-            //foreach (DataTable sortTable in hospitalTable.Columns)
-            //{
-            //    sortTable.SortMode = DataGridViewColumnSortMode.NotSortable;
-            //}
+            List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
 
-            List<Hospital> listofHospitalObejects;
-            listofHospitalObejects = Class_Manager.GetDataOfHospital();
-
-            foreach (var dataHospital in listofHospitalObejects)
+            foreach (var dataHospital in hospiatlObjects)
             {
                 hospitalTable.Rows.Add(dataHospital.IdHospital, dataHospital.Name, dataHospital.Rue, dataHospital.District, dataHospital.City, dataHospital.NumberOfFlors, dataHospital.NumberOfRoms, dataHospital.NumberofBeds);
 
             }
 
             Hospital_Edit_Table.DataSource = hospitalTable;
+        }
+        private List<Hospital> Get_Data_Of_Hospital()
+        {
+            List<Hospital> listofHospitalObejects;
+            listofHospitalObejects = Class_Manager.GetDataOfHospital();
+            return listofHospitalObejects;
+
         }
 
         private void Back_Hospital_Edit_Click(object sender, EventArgs e)
@@ -92,12 +99,54 @@ namespace Menus.HospitalEdit
 
         }
 
+        private List<String> GetRowFromList()
+        {
+
+            List<String> getDataFromRow = new List<string>();
+
+            foreach (DataGridViewRow row in Hospital_Edit_Table.SelectedRows)
+            {
+                getDataFromRow.Add(row.Cells[0].Value.ToString());
+                getDataFromRow.Add(row.Cells[1].Value.ToString());
+                getDataFromRow.Add(row.Cells[2].Value.ToString());
+                getDataFromRow.Add(row.Cells[3].Value.ToString());
+                getDataFromRow.Add(row.Cells[4].Value.ToString());
+                getDataFromRow.Add(row.Cells[5].Value.ToString());
+                getDataFromRow.Add(row.Cells[6].Value.ToString());
+                getDataFromRow.Add(row.Cells[7].Value.ToString());
+
+            }
+            return getDataFromRow;
+        }
+
         private void Hospital_Edit_Edit_Click(object sender, EventArgs e)
         {
 
-            //MessageBox.Show("ARE YOU SURE YOU WANT TO EDIT", "WARNING", MessageBoxButtons.YesNo);
+            DialogResult getDialogResult = MessageBox.Show("ARE YOU SURE YOU WANT TO EDIT", "WARNING", MessageBoxButtons.YesNo);
+            if (getDialogResult == DialogResult.Yes)
+            {
+                List<String> getDataFromRow = GetRowFromList();
+                int getId = int.Parse(getDataFromRow[0]);
 
-            //MessageBox.Show("HOSPITAL INSERTED", "WARNING", MessageBoxButtons.OK);
+                List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
+
+                foreach (var objects in hospiatlObjects)
+                {
+                    if (objects.IdHospital == getId)
+                    {
+                        objects.Name = textBox1.Text;
+                        objects.Rue = textBox2.Text;
+                        objects.District = Enum.Parse<District>(comboBox1.GetItemText(this.comboBox1.SelectedItem));
+                        objects.City = Enum.Parse<City>(comboBox2.GetItemText(this.comboBox2.SelectedItem));
+                        objects.NumberOfFlors = uint.Parse(comboBox3.SelectedItem.ToString());
+                        objects.NumberOfRoms = uint.Parse(comboBox4.SelectedItem.ToString());
+                        objects.NumberofBeds = uint.Parse(comboBox5.SelectedItem.ToString());
+                        LoadDataToDataGrid();
+                    }
+
+                }
+
+            }
 
         }
     }

@@ -8,8 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>ebce1b1c-86f0-402b-bdff-4e23b519f5bf</UserSecretsId>
     <Platforms>AnyCPU;x64</Platforms>
-    <AssemblyVersion>1.0.0.132</AssemblyVersion>
-    <FileVersion>1.0.0.125</FileVersion>
+    <AssemblyVersion>1.0.0.144</AssemblyVersion>
+    <FileVersion>1.0.0.137</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
