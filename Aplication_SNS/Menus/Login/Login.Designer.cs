@@ -77,6 +77,7 @@ namespace Menus.Log
             this.password_Login.Text = "Insert Password...";
             this.password_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.password_Login.Click += new System.EventHandler(this.password_Login_Click);
+            this.password_Login.TextChanged += new System.EventHandler(this.password_Login_TextChanged);
             // 
             // userName_Login
             // 
