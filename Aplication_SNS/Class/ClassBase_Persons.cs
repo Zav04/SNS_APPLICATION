@@ -13,7 +13,7 @@ namespace Class.CPerson
     {
        
 
-        public ClassBase_Persons(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth) 
+        public ClassBase_Persons(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth) 
         {
             this.Name = pName;
             this.Age = pAge;
@@ -67,17 +67,17 @@ namespace Class.CPerson
         /// <summary>
         /// Propertie CC NIF
         /// </summary>
-        public uint CCNIF { get; set; }
+        public ulong CCNIF { get; set; }
 
         /// <summary>
         /// Propertie CC SNS
         /// </summary>
-        public uint CCSNS { get; set; }
+        public ulong CCSNS { get; set; }
 
         /// <summary>
         /// Propertie CC Segurança Social
         /// </summary>
-        public uint CCSS { get; set; }
+        public ulong CCSS { get; set; }
 
         /// <summary>
         /// Propertie Date of Birth

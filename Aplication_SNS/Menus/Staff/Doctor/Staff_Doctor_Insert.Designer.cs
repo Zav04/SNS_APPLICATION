@@ -1,4 +1,4 @@
-﻿namespace Menus.StaffDoctor
+﻿namespace Menus.StaffDoctorInsert
 {
     partial class Staff_Doctor_Insert
     {
@@ -55,8 +55,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.DOB_Text = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.Work_Combo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -294,32 +292,12 @@
             this.label11.TabIndex = 57;
             this.label11.Text = "DATE OF BIRTH OF NEW DOCTOR";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(368, 702);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(348, 30);
-            this.label12.TabIndex = 60;
-            this.label12.Text = "WORK HOSPITAL OF NEW DOCTOR";
-            // 
-            // Work_Combo
-            // 
-            this.Work_Combo.FormattingEnabled = true;
-            this.Work_Combo.Location = new System.Drawing.Point(740, 709);
-            this.Work_Combo.Name = "Work_Combo";
-            this.Work_Combo.Size = new System.Drawing.Size(286, 23);
-            this.Work_Combo.TabIndex = 59;
-            // 
             // Staff_Doctor_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.Work_Combo);
             this.Controls.Add(this.DOB_Text);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.SS_Text);
@@ -385,7 +363,5 @@
         private Label label10;
         private TextBox DOB_Text;
         private Label label11;
-        private Label label12;
-        private ComboBox Work_Combo;
     }
 }

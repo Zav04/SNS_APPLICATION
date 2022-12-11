@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menus.StaffMain;
 using Menus.StaffDoctor;
+using Menus.StaffDoctorInsert;
+using Menus.StaffDoctorHire;
 
 namespace Menus.StaffDoctor
 {
@@ -40,9 +42,9 @@ namespace Menus.StaffDoctor
 
         private void Staff_Doctor_Hire_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            //Staff_Main newStaffMain = new Staff_Main();
-            //newStaffMain.Show();
+            this.Close();
+            Staff_Doctor_Hire staff_Doctor_Hire = new Staff_Doctor_Hire();
+            staff_Doctor_Hire.Show();
         }
 
         private void Staff_Doctor_Edit_Click(object sender, EventArgs e)

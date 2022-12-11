@@ -13,10 +13,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Class.CHospital;
 using Class.CDoctor;
+using Menus.StaffDoctor;
 
 
 
-namespace Menus.StaffDoctor
+namespace Menus.StaffDoctorInsert
 {
     public partial class Staff_Doctor_Insert : Form
     {
@@ -27,36 +28,43 @@ namespace Menus.StaffDoctor
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<Doctor> listofDoctorObejects;
+            if (
+            String.IsNullOrEmpty(Name_Text.Text) != true &&
+            Age_Combo.SelectedIndex != -1 &&
+            String.IsNullOrEmpty(Rue_Text.Text) != true &&
+            District_Combo.SelectedIndex != -1 &&
+            City_Combo.SelectedIndex != -1 &&
+            String.IsNullOrEmpty(CCNumber_Text.Text) != true &&
+            String.IsNullOrEmpty(NIF_Text.Text) != true &&
+            String.IsNullOrEmpty(SNS_Text.Text) != true &&
+            String.IsNullOrEmpty(SS_Text.Text) != true &&
+            String.IsNullOrEmpty(DOB_Text.Text) != true &&
+            Specialty_Combo.SelectedIndex != -1)
+            {
 
-            //if (
-            //String.IsNullOrEmpty(textBox1.Text) != true &&
-            //String.IsNullOrEmpty(textBox1.Text) != true &&
-            //comboBox1.SelectedIndex != -1 &&
-            //comboBox2.SelectedIndex != -1 &&
-            //comboBox3.SelectedIndex != -1 &&
-            //comboBox3.SelectedIndex != -1 &&
-            //comboBox4.SelectedIndex != -1 &&
-            //comboBox5.SelectedIndex != -1)
-            //{
-
-            //    Hospital newInsert = new Hospital(
-            //        textBox1.Text,
-            //        textBox2.Text,
-            //        Enum.Parse<District>(comboBox1.GetItemText(this.comboBox1.SelectedItem)),
-            //        Enum.Parse<City>(comboBox2.GetItemText(this.comboBox2.SelectedItem)),
-            //        uint.Parse(comboBox3.SelectedItem.ToString()),
-            //        uint.Parse(comboBox4.SelectedItem.ToString()),
-            //        uint.Parse(comboBox5.SelectedItem.ToString()));
-
-            //    listofHospitalObejects = Class_Manager.GetDataOfHospital();
-            //    listofHospitalObejects.Add(newInsert);
-
-            //    MessageBox.Show("HOSPITAL INSERTED", "WARNING", MessageBoxButtons.OK);
+                    Doctor newInsert = new Doctor(
+                                        Name_Text.Text,
+                                        uint.Parse(Age_Combo.SelectedItem.ToString()),
+                                        Rue_Text.Text,
+                                        Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
+                                        Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
+                                        CCNumber_Text.Text,
+                                        ulong.Parse(NIF_Text.Text),
+                                        ulong.Parse(SNS_Text.Text),
+                                        ulong.Parse(SS_Text.Text),
+                                        DOB_Text.Text,
+                                        Enum.Parse<DoctorSpecialty>(Specialty_Combo.GetItemText(this.Specialty_Combo.SelectedItem)));
 
 
-            //}
-            //else
-            //    MessageBox.Show("PROBLEM TO INSERT A NEW HOSPITAL, PLEASE VERIFY THE INPUTS", "ERROR", MessageBoxButtons.OK);
+
+                listofDoctorObejects = Class_Manager.GetDataOfDoctors();
+                listofDoctorObejects.Add(newInsert);
+
+                MessageBox.Show("DOCTOR INSERTED", "WARNING", MessageBoxButtons.OK);
+            }
+            else
+                MessageBox.Show("PROBLEM TO INSERT A NEW DOCTOR, PLEASE VERIFY THE INPUTS", "ERROR", MessageBoxButtons.OK);
 
         }
 
@@ -76,24 +84,7 @@ namespace Menus.StaffDoctor
                     Age_Combo.Items.Add(i);
                 }
 
-                Work_Combo.Items.Add("Not Hired");
-
-                List<Hospital> listofDcotorObejects = Get_Data_Of_Hospital();
-                foreach (Hospital hospital in listofDcotorObejects)
-                {
-                    Work_Combo.Items.Add(hospital.Name);
-                }
-
-
             }
-        }
-
-        private List<Hospital> Get_Data_Of_Hospital()
-        {
-            List<Hospital> listofHospitalObejects;
-            listofHospitalObejects = Class_Manager.GetDataOfHospital();
-            return listofHospitalObejects;
-
         }
 
         private void BACK_Hospital_View_Click(object sender, EventArgs e)

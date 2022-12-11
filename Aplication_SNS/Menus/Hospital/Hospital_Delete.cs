@@ -96,16 +96,8 @@ namespace Menus.HospitalDelete
 
                     List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
 
-                    foreach (var objects in hospiatlObjects)
-                    {
-                        if (objects.IdHospital == getId)
-                        {
-                            hospiatlObjects.Remove(objects);
-                            LoadDataToDataGrid();
-                            break;
-                        }
-
-                    }
+                    hospiatlObjects.RemoveAll(del=>(del.IdHospital== getId));
+                    LoadDataToDataGrid();
 
                 }
             }

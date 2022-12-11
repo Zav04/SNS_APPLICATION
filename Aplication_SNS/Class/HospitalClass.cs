@@ -39,7 +39,7 @@ namespace Class.CHospital
         /// <summary>
         /// Propertie Read Only ID
         /// </summary>
-        public int IdHospital { get; }
+        public int IdHospital { get; private set; }
 
     }
 }

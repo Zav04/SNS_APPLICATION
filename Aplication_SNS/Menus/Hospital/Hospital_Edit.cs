@@ -130,7 +130,7 @@ namespace Menus.HospitalEdit
 
                     List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
 
-                    foreach (var objects in hospiatlObjects)
+                    foreach (Hospital objects in hospiatlObjects)
                     {
                         if (objects.IdHospital == getId)
                         {

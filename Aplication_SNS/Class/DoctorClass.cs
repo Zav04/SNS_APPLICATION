@@ -19,22 +19,23 @@ namespace Class.CDoctor
     public class Doctor : ClassBase_Persons
     {
 
-       //private DoctorSpecialty specialty;
+        private static int idDoctor = 0;
 
-        public Doctor(string pName, uint pAge,string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
+        public Doctor(string pName, uint pAge,string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
                       :base(pName, pAge, pRue, pDistrict, pCity,pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
         {
 
             this.Specialty = dSpecialty;
+            this.ID_Doctor = System.Threading.Interlocked.Increment(ref idDoctor);
 
         }
-
-        public Doctor(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth, DoctorSpecialty dSpecialty, Hospital hospitalWork)
-                     :base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
+        public Doctor(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth, DoctorSpecialty dSpecialty, ref Hospital dhospital)
+              : base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
             this.Specialty = dSpecialty;
-            this.Hospital = hospitalWork;
+            this.Hospital = dhospital;
+            this.ID_Doctor = System.Threading.Interlocked.Increment(ref idDoctor);
 
         }
         ~Doctor(){ }
@@ -48,10 +49,20 @@ namespace Class.CDoctor
 
 
         /// <summary>
-        /// Specialty of doctor
+        /// Get working Hospital
         /// The other variables are from class base
         /// </summary>
-        public Hospital Hospital { get; set; }
+        public Hospital Hospital { get; private set; }
+
+
+        /// <summary>
+        /// Get Id From Doctor
+        /// The other variables are from class base
+        /// </summary>
+        public int ID_Doctor { get; set; }
+
+
+        public void SetHospital(Hospital hospital) { this.Hospital = hospital; }
 
 
 
