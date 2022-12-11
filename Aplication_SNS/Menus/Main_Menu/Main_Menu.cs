@@ -7,6 +7,7 @@ using System.Diagnostics;
 using Menus.Log;
 using Menus.FHospital;
 using Class.ManagerOfData;
+using Menus.StaffMain;
 
 
 
@@ -84,6 +85,13 @@ namespace Menus.MainMenu
             this.Close();
             Hospital_Menu hospital_Menu = new Hospital_Menu();
             hospital_Menu.Show();
+        }
+
+        private void staff_MainMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Staff_Main newStaffMain = new Staff_Main();
+            newStaffMain.Show();
         }
     }
 }

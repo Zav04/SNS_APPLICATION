@@ -76,6 +76,7 @@ namespace Menus.MainMenu
             this.staff_MainMenu.Size = new System.Drawing.Size(300, 350);
             this.staff_MainMenu.TabIndex = 10;
             this.staff_MainMenu.UseVisualStyleBackColor = true;
+            this.staff_MainMenu.Click += new System.EventHandler(this.staff_MainMenu_Click);
             // 
             // pacient_MainMenu
             // 

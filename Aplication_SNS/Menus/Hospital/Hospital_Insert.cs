@@ -12,6 +12,7 @@ using Portugal.City;
 using Portugal.District;
 using Menus.FHospital;
 using Class.ManagerOfData;
+using Class.CDoctor;
 
 namespace Menus.HospitalInsert
 {

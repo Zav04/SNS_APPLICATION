@@ -37,7 +37,6 @@ namespace Menus.HospitalEdit
 
             LoadDataToDataGrid();
 
-
         }
 
 

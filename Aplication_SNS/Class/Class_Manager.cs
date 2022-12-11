@@ -22,6 +22,12 @@ namespace Class.ManagerOfData
         public static void ReadDataOfDoctors()
         {
 
+            managerOfDoctors.Add(new Doctor("Bruno", 23,"Rua",District.Braga,City.Guimarães,"213281931sc",123455689, 123455689, 123455689,"06/06/1999",DoctorSpecialty.Cardiologist));
+            managerOfDoctors.Add(new Doctor("Bruno", 23, "Rua", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1999", DoctorSpecialty.Cardiologist));
+            managerOfDoctors.Add(new Doctor("Bruno", 23, "Rua", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1999", DoctorSpecialty.Cardiologist));
+            managerOfDoctors.Add(new Doctor("Bruno", 23, "Rua", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1999", DoctorSpecialty.Cardiologist));
+            managerOfDoctors.Add(new Doctor("Bruno", 23, "Rua", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1999", DoctorSpecialty.Cardiologist));
+            managerOfDoctors.Add(new Doctor("Bruno", 23, "Rua", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1999", DoctorSpecialty.Cardiologist));
 
         }
 

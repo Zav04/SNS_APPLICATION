@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using Class.CPerson;
 using Portugal.District;
 using Portugal.City;
+using Class.CHospital;
 
 namespace Class.CDoctor
 {
@@ -21,10 +22,19 @@ namespace Class.CDoctor
        //private DoctorSpecialty specialty;
 
         public Doctor(string pName, uint pAge,string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth,DoctorSpecialty dSpecialty) 
-            :base(pName, pAge, pRue, pDistrict, pCity,pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
+                      :base(pName, pAge, pRue, pDistrict, pCity,pCCNumber, pCCNIF, pCCSNS,pccSS, pdateOfBirth)
         {
 
             this.Specialty = dSpecialty;
+
+        }
+
+        public Doctor(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth, DoctorSpecialty dSpecialty, Hospital hospitalWork)
+                     :base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
+        {
+
+            this.Specialty = dSpecialty;
+            this.Hospital = hospitalWork;
 
         }
         ~Doctor(){ }
@@ -35,7 +45,14 @@ namespace Class.CDoctor
         /// The other variables are from class base
         /// </summary>
         public DoctorSpecialty Specialty { get; set; }
- 
+
+
+        /// <summary>
+        /// Specialty of doctor
+        /// The other variables are from class base
+        /// </summary>
+        public Hospital Hospital { get; set; }
+
 
 
     }
