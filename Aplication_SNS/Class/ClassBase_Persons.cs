@@ -13,7 +13,7 @@ namespace Class.CPerson
     {
        
 
-        public ClassBase_Persons(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth) 
+        public ClassBase_Persons(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pCCSS, string pdateOfBirth) 
         {
             this.Name = pName;
             this.Age = pAge;
@@ -23,7 +23,7 @@ namespace Class.CPerson
             this.CCNumber = pCCNumber;
             this.CCNIF = pCCNIF;
             this.CCSNS = pCCSNS;
-            this.CCSS = pccSS;
+            this.CCSS = pCCSS;
             this.DateOfBirth = pdateOfBirth;
         }
 

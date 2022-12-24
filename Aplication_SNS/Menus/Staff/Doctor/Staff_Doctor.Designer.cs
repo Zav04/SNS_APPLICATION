@@ -158,7 +158,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Staff_Doctor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff_Doctor";
             this.Load += new System.EventHandler(this.Staff_Doctor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
