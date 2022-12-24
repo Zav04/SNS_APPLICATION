@@ -31,11 +31,11 @@ namespace Menus.StaffDoctorEdit
                 Combo_Doctor_City_Edit.Items.Add(city);
             foreach (DoctorSpecialty doctorSpecialty in (DoctorSpecialty[])Enum.GetValues(typeof(DoctorSpecialty)))
                 Combo_Doctor_Specialty_Edit.Items.Add(doctorSpecialty);
-            LoadDataToDataGrid();
+            LoadDataToDataGridDoctor();
         }
 
 
-        private void LoadDataToDataGrid()
+        private void LoadDataToDataGridDoctor()
         {
             DataTable DoctorTable = new DataTable();
             DoctorTable.Columns.Add("ID", typeof(int));
@@ -95,7 +95,7 @@ namespace Menus.StaffDoctorEdit
         }
 
 
-        private List<String> GetRowFromList()
+        private List<String> GetRowFromListInTableDoctor()
         {
 
             List<String> getDataFromRow = new List<string>();
@@ -125,7 +125,7 @@ namespace Menus.StaffDoctorEdit
                 DialogResult getDialogResult = MessageBox.Show("ARE YOU SURE YOU WANT TO EDIT", "WARNING", MessageBoxButtons.YesNo);
                 if (getDialogResult == DialogResult.Yes)
                 {
-                    List<String> getDataFromRow = GetRowFromList();
+                    List<String> getDataFromRow = GetRowFromListInTableDoctor();
                     int getId = int.Parse(getDataFromRow[0]);
 
                     List<Doctor> DoctorObjects = Get_Data_Of_Doctors();
@@ -145,7 +145,7 @@ namespace Menus.StaffDoctorEdit
                             objects.CCSS = ulong.Parse(Text_Doctor_CCSS_Edit.Text);
                             objects.DateOfBirth = Text_Doctor_DOB_Edit.Text;
                             objects.Specialty = Enum.Parse<DoctorSpecialty>(Combo_Doctor_Specialty_Edit.GetItemText(this.Combo_Doctor_Specialty_Edit.SelectedItem));
-                            LoadDataToDataGrid();
+                            LoadDataToDataGridDoctor();
                             break;
 
                         }

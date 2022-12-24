@@ -35,12 +35,12 @@ namespace Menus.HospitalEdit
                 comboBox5.Items.Add(i);
             }
 
-            LoadDataToDataGrid();
+            LoadDataToDataGridHospital();
 
         }
 
 
-        private void LoadDataToDataGrid()
+        private void LoadDataToDataGridHospital()
         {
             DataTable hospitalTable = new DataTable();
             hospitalTable.Columns.Add("ID", typeof(int));
@@ -98,7 +98,7 @@ namespace Menus.HospitalEdit
 
         }
 
-        private List<String> GetRowFromList()
+        private List<String> GetRowFromListInHospital()
         {
 
             List<String> getDataFromRow = new List<string>();
@@ -125,7 +125,7 @@ namespace Menus.HospitalEdit
                 DialogResult getDialogResult = MessageBox.Show("ARE YOU SURE YOU WANT TO EDIT", "WARNING", MessageBoxButtons.YesNo);
                 if (getDialogResult == DialogResult.Yes)
                 {
-                    List<String> getDataFromRow = GetRowFromList();
+                    List<String> getDataFromRow = GetRowFromListInHospital();
                     int getId = int.Parse(getDataFromRow[0]);
 
                     List<Hospital> hospiatlObjects = Get_Data_Of_Hospital();
@@ -141,7 +141,7 @@ namespace Menus.HospitalEdit
                             objects.NumberOfFlors = uint.Parse(comboBox3.SelectedItem.ToString());
                             objects.NumberOfRoms = uint.Parse(comboBox4.SelectedItem.ToString());
                             objects.NumberofBeds = uint.Parse(comboBox5.SelectedItem.ToString());
-                            LoadDataToDataGrid();
+                            LoadDataToDataGridHospital();
                             break;
                         }
 

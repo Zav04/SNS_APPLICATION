@@ -7,8 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <PlatformTarget>x64</PlatformTarget>
-    <AssemblyVersion>1.0.0.161</AssemblyVersion>
-    <FileVersion>1.0.0.154</FileVersion>
+    <AssemblyVersion>1.0.0.162</AssemblyVersion>
+    <FileVersion>1.0.0.155</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
