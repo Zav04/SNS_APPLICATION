@@ -32,6 +32,7 @@ namespace Menus.HospitalView
             hospitalTable.Columns.Add("Number of Flors", typeof(uint));
             hospitalTable.Columns.Add("Number of Rooms", typeof(uint));
             hospitalTable.Columns.Add("Number of Beds", typeof(uint));
+            hospitalTable.Columns.Add("Available Beds", typeof(uint));
             Hospital_View_Table.ReadOnly = true;
             Hospital_View_Table.AllowUserToAddRows = false;
 
@@ -40,12 +41,13 @@ namespace Menus.HospitalView
 
             foreach (var dataHospital in listofHospitalObejects)
             {
-                hospitalTable.Rows.Add(dataHospital.IdHospital, dataHospital.Name, dataHospital.Rue, dataHospital.District, dataHospital.City, dataHospital.NumberOfFlors, dataHospital.NumberOfRoms, dataHospital.NumberofBeds);
+                hospitalTable.Rows.Add(dataHospital.IdHospital, dataHospital.Name, dataHospital.Rue, dataHospital.District, dataHospital.City, dataHospital.NumberOfFlors, dataHospital.NumberOfRoms, dataHospital.NumberofBeds, dataHospital.GetFreeBeds());
 
             }
-
             Hospital_View_Table.DataSource = hospitalTable;
         }
+
+       
 
         private void button1_Click(object sender, EventArgs e)
         {

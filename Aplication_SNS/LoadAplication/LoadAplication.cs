@@ -33,7 +33,7 @@ namespace LoadAplication
             button2.Visible=false;
             Class_Manager.ReadDataOfDoctors();
             Class_Manager.ReadDataOfNurse();
-            Class_Manager.ReadDataOfDoctors();
+            Class_Manager.ReadDataOfPacient();
             Class_Manager.ReadDataOfHospital();
             this.timer1.Start();
         }

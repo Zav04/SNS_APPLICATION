@@ -89,12 +89,25 @@ namespace Menus.HospitalEdit
 
                 comboBox1.SelectedIndex = (int)Enum.Parse<District>(Hospital_Edit_Table.Rows[e.RowIndex].Cells["District"].FormattedValue.ToString());
                 comboBox2.SelectedIndex = (int)Enum.Parse<City>(Hospital_Edit_Table.Rows[e.RowIndex].Cells["City"].FormattedValue.ToString());
-                comboBox3.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Flors"].FormattedValue.ToString());
-                comboBox4.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Rooms"].FormattedValue.ToString());
-                comboBox5.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Beds"].FormattedValue.ToString());
+
+                int comboindex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Flors"].FormattedValue.ToString());
+                if(comboindex > 1)
+                    comboBox3.SelectedIndex = (int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Flors"].FormattedValue.ToString())-1);
+                else
+                    comboBox3.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Flors"].FormattedValue.ToString());
+
+                comboindex = comboBox4.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Rooms"].FormattedValue.ToString());
+                if (comboindex > 1)
+                    comboBox4.SelectedIndex = (int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Rooms"].FormattedValue.ToString()) - 1);
+                else
+                    comboBox4.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Rooms"].FormattedValue.ToString());
+
+                comboindex = comboBox5.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Beds"].FormattedValue.ToString());
+                if (comboindex > 1)
+                    comboBox5.SelectedIndex = (int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Beds"].FormattedValue.ToString()) - 1);
+                else
+                    comboBox5.SelectedIndex = int.Parse(Hospital_Edit_Table.Rows[e.RowIndex].Cells["Number of Beds"].FormattedValue.ToString());
             }
-
-
 
         }
 
