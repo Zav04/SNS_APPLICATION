@@ -45,6 +45,7 @@ namespace Menus.StaffDoctorHire
 
             Hospital_Hire_Table.DataSource = hospitalTable;
         }
+
         private List<Hospital> Get_Data_Of_Hospital()
         {
             List<Hospital> listofHospitalObejects;
@@ -105,7 +106,6 @@ namespace Menus.StaffDoctorHire
         {
             LoadHospitalDataToDataGrid();
             LoadDoctorsDataToDataGrid();
-
         }
 
         private void BACK_Hospital_Menu_Click(object sender, EventArgs e)
@@ -115,13 +115,11 @@ namespace Menus.StaffDoctorHire
             staff_Doctor.Show();
         }
 
-
         private int GetIdFromHospitalList()
         {
 
             int idHospital = new int();
-
-            foreach (DataGridViewRow row in Doctor_Hire_Table.SelectedRows)
+            foreach (DataGridViewRow row in Hospital_Hire_Table.SelectedRows)
             {
                 idHospital = int.Parse(row.Cells[0].Value.ToString());
             }
@@ -133,7 +131,7 @@ namespace Menus.StaffDoctorHire
 
             int idDoctor = new int();
 
-            foreach (DataGridViewRow row in Hospital_Hire_Table.SelectedRows)
+            foreach (DataGridViewRow row in Doctor_Hire_Table.SelectedRows)
             {
                 idDoctor = int.Parse(row.Cells[0].Value.ToString());
             }

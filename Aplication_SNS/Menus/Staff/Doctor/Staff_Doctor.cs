@@ -12,6 +12,9 @@ using Menus.StaffDoctor;
 using Menus.StaffDoctorInsert;
 using Menus.StaffDoctorHire;
 using Menus.StaffDoctorEdit;
+using Menus.StaffDoctorDelete;
+using Menus.StaffDoctorView;
+
 
 namespace Menus.StaffDoctor
 {
@@ -57,16 +60,16 @@ namespace Menus.StaffDoctor
 
         private void Staff_Doctor_Delete_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            //Staff_Main newStaffMain = new Staff_Main();
-            //newStaffMain.Show();
+            this.Close();
+            Staff_Doctor_Delete staffDoctorDelete = new Staff_Doctor_Delete();
+            staffDoctorDelete.Show();
         }
 
         private void Staff_Doctor_View_Click(object sender, EventArgs e)
         {
-            //this.Close();
-            //Staff_Main newStaffMain = new Staff_Main();
-            //newStaffMain.Show();
+            this.Close();
+            Staff_Doctor_View staff_Doctor_View = new Staff_Doctor_View();
+            staff_Doctor_View.Show();
         }
     }
 }

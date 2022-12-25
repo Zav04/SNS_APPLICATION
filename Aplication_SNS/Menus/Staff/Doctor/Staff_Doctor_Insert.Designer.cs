@@ -325,6 +325,7 @@
             this.Controls.Add(this.District_Combo);
             this.Controls.Add(this.Name_Text);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Staff_Doctor_Insert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff_Doctor_Insert";

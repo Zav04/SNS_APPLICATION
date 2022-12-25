@@ -195,7 +195,7 @@
             // Back_Hospital_Edit
             // 
             this.Back_Hospital_Edit.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Back_Hospital_Edit.Location = new System.Drawing.Point(1445, 902);
+            this.Back_Hospital_Edit.Location = new System.Drawing.Point(1454, 832);
             this.Back_Hospital_Edit.Name = "Back_Hospital_Edit";
             this.Back_Hospital_Edit.Size = new System.Drawing.Size(134, 56);
             this.Back_Hospital_Edit.TabIndex = 41;
@@ -310,7 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1584, 961);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Combo_Doctor_Specialty_Edit);
             this.Controls.Add(this.label10);

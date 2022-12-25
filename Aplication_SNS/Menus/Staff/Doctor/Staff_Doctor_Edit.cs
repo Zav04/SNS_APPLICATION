@@ -37,19 +37,19 @@ namespace Menus.StaffDoctorEdit
 
         private void LoadDataToDataGridDoctor()
         {
-            DataTable DoctorTable = new DataTable();
-            DoctorTable.Columns.Add("ID", typeof(int));
-            DoctorTable.Columns.Add("Name", typeof(string));
-            DoctorTable.Columns.Add("Age", typeof(string));
-            DoctorTable.Columns.Add("Rue", typeof(string));
-            DoctorTable.Columns.Add("District", typeof(string));
-            DoctorTable.Columns.Add("City", typeof(string));
-            DoctorTable.Columns.Add("CC Number", typeof(string));
-            DoctorTable.Columns.Add("CC NIF", typeof(ulong));
-            DoctorTable.Columns.Add("CC SNS", typeof(ulong));
-            DoctorTable.Columns.Add("CC SS", typeof(ulong));
-            DoctorTable.Columns.Add("Date of Birth", typeof(string));
-            DoctorTable.Columns.Add("Specialty", typeof(DoctorSpecialty));
+            DataTable doctorTable = new DataTable();
+            doctorTable.Columns.Add("ID", typeof(int));
+            doctorTable.Columns.Add("Name", typeof(string));
+            doctorTable.Columns.Add("Age", typeof(string));
+            doctorTable.Columns.Add("Rue", typeof(string));
+            doctorTable.Columns.Add("District", typeof(string));
+            doctorTable.Columns.Add("City", typeof(string));
+            doctorTable.Columns.Add("CC Number", typeof(string));
+            doctorTable.Columns.Add("CC NIF", typeof(ulong));
+            doctorTable.Columns.Add("CC SNS", typeof(ulong));
+            doctorTable.Columns.Add("CC SS", typeof(ulong));
+            doctorTable.Columns.Add("Date of Birth", typeof(string));
+            doctorTable.Columns.Add("Specialty", typeof(DoctorSpecialty));
 
             Doctor_Edit_Table.ReadOnly = true;
             Doctor_Edit_Table.AllowUserToAddRows = false;
@@ -58,11 +58,11 @@ namespace Menus.StaffDoctorEdit
 
             foreach (var dataDoctor in DoctorObjects)
             {
-                DoctorTable.Rows.Add(dataDoctor.ID_Doctor, dataDoctor.Name, dataDoctor.Age, dataDoctor.Rue, dataDoctor.District, dataDoctor.City, dataDoctor.CCNumber, dataDoctor.CCNIF, dataDoctor.CCSNS, dataDoctor.CCSS, dataDoctor.DateOfBirth, dataDoctor.Specialty);
+                doctorTable.Rows.Add(dataDoctor.ID_Doctor, dataDoctor.Name, dataDoctor.Age, dataDoctor.Rue, dataDoctor.District, dataDoctor.City, dataDoctor.CCNumber, dataDoctor.CCNIF, dataDoctor.CCSNS, dataDoctor.CCSS, dataDoctor.DateOfBirth, dataDoctor.Specialty);
 
             }
 
-            Doctor_Edit_Table.DataSource = DoctorTable;
+            Doctor_Edit_Table.DataSource = doctorTable;
         }
         private List<Doctor> Get_Data_Of_Doctors()
         {
@@ -155,7 +155,7 @@ namespace Menus.StaffDoctorEdit
                 }
             }
             else
-                MessageBox.Show("SELECT A LINE TO EDIT A HOSPITAL FROM APLICATION", "WARNING", MessageBoxButtons.OK);
+                MessageBox.Show("SELECT A LINE TO EDIT A DOCTOR FROM APLICATION", "WARNING", MessageBoxButtons.OK);
 
         }
 
