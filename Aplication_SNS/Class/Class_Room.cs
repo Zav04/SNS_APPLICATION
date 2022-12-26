@@ -22,7 +22,7 @@ namespace Class.CRoom
 
         }
 
-        public Class_Room(int idHospital, PacientClass pacient, bool busy = false)
+        public Class_Room(int idHospital, PacientClass pacient, bool busy = true)
         {
             this.Id = System.Threading.Interlocked.Increment(ref idRoom);
             this.IdHospital = idHospital;
