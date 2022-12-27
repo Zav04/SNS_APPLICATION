@@ -8,8 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>ebce1b1c-86f0-402b-bdff-4e23b519f5bf</UserSecretsId>
     <Platforms>AnyCPU;x64</Platforms>
-    <AssemblyVersion>1.0.0.212</AssemblyVersion>
-    <FileVersion>1.0.0.205</FileVersion>
+    <AssemblyVersion>1.0.0.213</AssemblyVersion>
+    <FileVersion>1.0.0.206</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,10 +35,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Pacient\" />
   </ItemGroup>
 
 </Project>
