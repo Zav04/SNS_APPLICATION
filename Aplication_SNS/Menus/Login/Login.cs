@@ -25,28 +25,7 @@ namespace Menus.Log
 
         private void login_button_Click(object sender, EventArgs e)
         {
-            if(password_Login.Text==""|| password_Login.Text == "Insert Password..." && userName_Login.Text == "" || userName_Login.Text== "Insert UserName..." || 
-               password_Login.Text != "admin" || userName_Login.Text != "admin")
-            {
-
-                MessageBox.Show("Please Insert the Right Credentials \nTIP:\nUSER:admin\nPW:admin", "Credential Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-            if(password_Login.Text == "admin" && userName_Login.Text == "admin")
-            {
-
-                this.Close();
-                Main_Menu main_Menu = new Main_Menu();
-                main_Menu.Show();
-
-
-
-
-
-
-
-            }
-
+            VerifyLogin();
         }
 
         private void userName_Login_Click(object sender, EventArgs e)
@@ -67,6 +46,35 @@ namespace Menus.Log
         private void password_Login_TextChanged(object sender, EventArgs e)
         {
             this.password_Login.UseSystemPasswordChar = true;
+        }
+
+
+        private void VerifyLogin()
+        {
+
+            if (password_Login.Text == "" || password_Login.Text == "Insert Password..." && userName_Login.Text == "" || userName_Login.Text == "Insert UserName..." ||
+               password_Login.Text != "admin" || userName_Login.Text != "admin")
+            {
+
+                MessageBox.Show("Please Insert the Right Credentials \nTIP:\nUSER:admin\nPW:admin", "Credential Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            if (password_Login.Text == "admin" && userName_Login.Text == "admin")
+            {
+
+                this.Close();
+                Main_Menu main_Menu = new Main_Menu();
+                main_Menu.Show();
+
+            }
+        }
+
+        private void password_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue==(char)Keys.Enter)
+            {
+                VerifyLogin();
+            }
         }
     }
 

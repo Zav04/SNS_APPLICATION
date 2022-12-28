@@ -52,6 +52,7 @@
             this.BACK_Hospital_Menu.TabIndex = 24;
             this.BACK_Hospital_Menu.Text = "BACK";
             this.BACK_Hospital_Menu.UseVisualStyleBackColor = true;
+            this.BACK_Hospital_Menu.Click += new System.EventHandler(this.BACK_Hospital_Menu_Click);
             // 
             // Pacient_View
             // 
@@ -168,6 +169,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Pacient_Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pacient_Menu";

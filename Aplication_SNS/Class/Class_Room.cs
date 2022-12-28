@@ -14,19 +14,9 @@ namespace Class.CRoom
     {
 
         private static int idRoom = 0;
-        public Class_Room(int idHospital,bool busy=false)
+        public Class_Room(bool busy=false)
         {
             this.Id = System.Threading.Interlocked.Increment(ref idRoom);
-            this.IdHospital = idHospital;
-            this.Busy = busy;
-
-        }
-
-        public Class_Room(int idHospital, PacientClass pacient, bool busy = true)
-        {
-            this.Id = System.Threading.Interlocked.Increment(ref idRoom);
-            this.IdHospital = idHospital;
-            this.Pacient = pacient;
             this.Busy = busy;
 
         }
@@ -36,11 +26,6 @@ namespace Class.CRoom
         public int Id { get; set; }
 
         public bool Busy { get; set; }
-
-        public int IdHospital { get; set; }
-
-        public PacientClass Pacient { get; private set; }
-
 
     }
 

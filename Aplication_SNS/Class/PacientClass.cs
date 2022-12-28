@@ -20,20 +20,22 @@ namespace Class.CPacient
         /// Overload Contructor of Pacient
         /// </summary>
 
-        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth, Status pStatus)
+        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth, Status pStatus , string observation, DoctorSpecialty typeIllness)
             : base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
             this.Status = pStatus;
+            this.Observation= observation;
 
         }
 
-        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth, Status pStatus,
-                  Hospital hospital, Doctor doctor, Class_Room room, DoctorSpecialty typeIllness)
+        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth, Status pStatus, string observation, DoctorSpecialty typeIllness,
+                  Hospital hospital, Doctor doctor, Class_Room room)
                  : base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
             this.Status = pStatus;
+            this.Observation = observation;
             this.Hospital= hospital;
             this.Doctor= doctor;
             this.Room= room;
@@ -41,12 +43,13 @@ namespace Class.CPacient
 
         }
 
-        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, uint pCCNIF, uint pCCSNS, uint pccSS, string pdateOfBirth, Status pStatus,
-            Hospital hospital, Doctor doctor, Class_Room room, DoctorSpecialty typeIllness, List<VisitorClass> visitors )
+        public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth, Status pStatus, string observation, DoctorSpecialty typeIllness,
+            Hospital hospital, Doctor doctor, Class_Room room, List<VisitorClass> visitors )
             : base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
             this.Status = pStatus;
+            this.Observation = observation;
             this.Hospital = hospital;
             this.Doctor = doctor;
             this.Room = room;
@@ -54,6 +57,7 @@ namespace Class.CPacient
             this.Visitors= visitors;
 
         }
+
         /// <summary>
         /// Destructor of Pacient
         /// </summary>
@@ -61,6 +65,8 @@ namespace Class.CPacient
 
 
         public Status Status { get; set; }
+
+        public string Observation { get; set; }
 
         public Hospital Hospital { get; set; }
 
@@ -72,15 +78,9 @@ namespace Class.CPacient
 
         public List<VisitorClass> Visitors { get; set; }
 
-        public List<VisitorClass> GetVisitorList()
+        public void InsertVisitorsInList(List<VisitorClass> visitors)
         {
-            List<VisitorClass> visitors= new List<VisitorClass>();
-            return visitors;
-        }
-
-        public void SetVisitorList(List<VisitorClass> visitors)
-        {
-            this.Visitors = visitors;
+            this.Visitors.AddRange(visitors);
         }
 
         public void DeleteVisitorFromList(int idVisitor)
@@ -89,10 +89,22 @@ namespace Class.CPacient
 
         }
 
-        public void InsertOneVisitorList(VisitorClass visitors)
+        public void DeleteVisitorFromList(string nameVisitor)
         {
-            Visitors.Add(visitors);
+            Visitors.RemoveAll(del => (del.Name == nameVisitor));
+
         }
+
+        public void InsertOneVisitorToList(VisitorClass visitors)
+        {
+            this.Visitors.Add(visitors);
+
+        }
+
+
+
+
+
 
 
     }

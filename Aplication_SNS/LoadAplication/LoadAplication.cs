@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Class.ManagerOfData;
 using Menus.Log;
-using Class.ManagerOfData;
 
 namespace LoadAplication
 {

@@ -78,6 +78,7 @@ namespace Menus.Log
             this.password_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.password_Login.Click += new System.EventHandler(this.password_Login_Click);
             this.password_Login.TextChanged += new System.EventHandler(this.password_Login_TextChanged);
+            this.password_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_Login_KeyDown);
             // 
             // userName_Login
             // 
@@ -89,6 +90,7 @@ namespace Menus.Log
             this.userName_Login.Text = "Insert UserName...";
             this.userName_Login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.userName_Login.Click += new System.EventHandler(this.userName_Login_Click);
+            this.userName_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_Login_KeyDown);
             // 
             // label1
             // 

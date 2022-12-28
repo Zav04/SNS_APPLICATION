@@ -160,6 +160,7 @@ namespace Menus.StaffDoctorHire
                                 if (dObject.ID_Doctor == getIdDoctor)
                                 {
                                     dObject.SetHospital(hObject);
+                                    hObject.SetDoctorToHospital(dObject);
                                     break;
                                 }
                             }

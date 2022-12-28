@@ -19,7 +19,7 @@ namespace Menus.HospitalInsert
     public partial class Hospital_Insert : Form
     {
 
-        List<Hospital> listofHospitalObejects;
+        
         public Hospital_Insert()
         {
             InitializeComponent();
@@ -52,8 +52,9 @@ namespace Menus.HospitalInsert
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<Hospital> listofHospitalObejects;
 
-            if(
+            if (
             String.IsNullOrEmpty(textBox1.Text) != true &&
             String.IsNullOrEmpty(textBox1.Text) != true &&
             comboBox1.SelectedIndex != -1 &&
@@ -77,8 +78,13 @@ namespace Menus.HospitalInsert
                 listofHospitalObejects.Add(newInsert);
 
                 MessageBox.Show("HOSPITAL INSERTED", "WARNING", MessageBoxButtons.OK);
-
-
+                textBox1.ResetText();
+                textBox2.ResetText();
+                comboBox1.SelectedIndex= -1;
+                comboBox2.SelectedIndex = -1;
+                comboBox3.SelectedIndex = -1;
+                comboBox4.SelectedIndex = -1;
+                comboBox5.SelectedIndex = -1;
             }
             else
             MessageBox.Show("PROBLEM TO INSERT A NEW HOSPITAL, PLEASE VERIFY THE INPUTS", "ERROR", MessageBoxButtons.OK);

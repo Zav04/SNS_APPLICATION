@@ -8,7 +8,8 @@ using Class.Building;
 using Portugal.City;
 using Portugal.District;
 using Class.CRoom;
-
+using Class.CDoctor;
+using Class.CPacient;
 
 namespace Class.CHospital
 {
@@ -16,12 +17,12 @@ namespace Class.CHospital
     {
 
         private static int idHospital = 0;
-        public Hospital(string bName, string bRue, District bDistrict, City bCity, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds) 
-            : base(bRue, bDistrict, bCity,bNumberofFlors, bNumberofRoms, bNumberofBeds)
+        public Hospital(string bName, string bRue, District bDistrict, City bCity, uint bNumberofFlors, uint bNumberofRoms, uint bNumberofBeds)
+            : base(bRue, bDistrict, bCity, bNumberofFlors, bNumberofRoms, bNumberofBeds)
         {
             this.Name = bName;
-            this.IdHospital= System.Threading.Interlocked.Increment(ref idHospital);
-            this.Rooms=SetListOfRooms(bNumberofBeds);
+            this.IdHospital = System.Threading.Interlocked.Increment(ref idHospital);
+            this.Rooms = SetListOfRooms(bNumberofBeds);
 
         }
 
@@ -49,9 +50,15 @@ namespace Class.CHospital
         public List<Class_Room> Rooms { get; private set; }
 
 
-        public uint GetFreeBeds()
+        /// <summary>
+        /// Propertie Read Only Doctors
+        /// </summary>
+        public List<Doctor> Doctors { get; private set; }
+
+
+        public int GetFreeBeds()
         {
-            uint counterRooms = 0;
+            int counterRooms = 0;
 
             int numberofRooms = Rooms.Count;
 
@@ -63,12 +70,27 @@ namespace Class.CHospital
             return counterRooms;
         }
 
+        public void SetDoctorToHospital(Doctor doctor)
+        {
+
+            if (this.Doctors == null)
+            {
+                this.Doctors = new List<Doctor>();
+                this.Doctors.Add(doctor);
+            }
+            else
+            {
+                this.Doctors.Add(doctor);
+            }
+
+        }
+
 
         private List<Class_Room> SetListOfRooms(uint nRooms)
         {
-            List <Class_Room> rooms= new List <Class_Room>();
+            List<Class_Room> rooms = new List<Class_Room>();
             for (int i = 0; i < nRooms; i++)
-                rooms.Add(new Class_Room(this.IdHospital));
+                rooms.Add(new Class_Room());
             return rooms;
         }
     }

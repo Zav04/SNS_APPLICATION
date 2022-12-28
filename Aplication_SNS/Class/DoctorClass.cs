@@ -4,6 +4,8 @@ using Class.CPerson;
 using Portugal.District;
 using Portugal.City;
 using Class.CHospital;
+using System.Collections.Generic;
+using Class.CPacient;
 
 namespace Class.CDoctor
 {
@@ -60,6 +62,22 @@ namespace Class.CDoctor
         /// The other variables are from class base
         /// </summary>
         public int ID_Doctor { get; set; }
+
+        public List<PacientClass> ListOfPacient { get; private set; }
+
+
+        public void SetPacient(PacientClass pacient) 
+        {
+            if (this.ListOfPacient == null)
+            {
+                this.ListOfPacient = new List<PacientClass>();
+                this.ListOfPacient.Add(pacient);
+            }
+            else
+            {
+                this.ListOfPacient.Add(pacient);
+            }
+        }
 
 
         public void SetHospital(Hospital hospital) { this.Hospital = hospital; }

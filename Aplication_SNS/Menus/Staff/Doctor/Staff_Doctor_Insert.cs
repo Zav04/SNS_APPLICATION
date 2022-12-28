@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Class.CHospital;
 using Class.CDoctor;
-using Menus.StaffDoctor;
 
 
 
@@ -43,18 +42,18 @@ namespace Menus.StaffDoctorInsert
             Specialty_Combo.SelectedIndex != -1)
             {
 
-                    Doctor newInsert = new Doctor(
-                                        Name_Text.Text,
-                                        uint.Parse(Age_Combo.SelectedItem.ToString()),
-                                        Rue_Text.Text,
-                                        Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
-                                        Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
-                                        CCNumber_Text.Text,
-                                        ulong.Parse(NIF_Text.Text),
-                                        ulong.Parse(SNS_Text.Text),
-                                        ulong.Parse(SS_Text.Text),
-                                        DOB_Text.Text,
-                                        Enum.Parse<DoctorSpecialty>(Specialty_Combo.GetItemText(this.Specialty_Combo.SelectedItem)));
+                Doctor newInsert = new Doctor(
+                                    Name_Text.Text,
+                                    uint.Parse(Age_Combo.SelectedItem.ToString()),
+                                    Rue_Text.Text,
+                                    Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
+                                    Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
+                                    CCNumber_Text.Text,
+                                    ulong.Parse(NIF_Text.Text),
+                                    ulong.Parse(SNS_Text.Text),
+                                    ulong.Parse(SS_Text.Text),
+                                    DOB_Text.Text,
+                                    Enum.Parse<DoctorSpecialty>(Specialty_Combo.GetItemText(this.Specialty_Combo.SelectedItem)));
 
 
 
@@ -62,6 +61,18 @@ namespace Menus.StaffDoctorInsert
                 listofDoctorObejects.Add(newInsert);
 
                 MessageBox.Show("DOCTOR INSERTED", "WARNING", MessageBoxButtons.OK);
+                Name_Text.ResetText();
+                Age_Combo.SelectedIndex = -1;
+                Rue_Text.ResetText();
+                District_Combo.SelectedIndex = -1;
+                City_Combo.SelectedIndex = -1;
+                CCNumber_Text.ResetText();
+                NIF_Text.ResetText();
+                SNS_Text.ResetText();
+                SS_Text.ResetText();
+                DOB_Text.ResetText();
+                Specialty_Combo.SelectedIndex = -1;
+
             }
             else
                 MessageBox.Show("PROBLEM TO INSERT A NEW DOCTOR, PLEASE VERIFY THE INPUTS", "ERROR", MessageBoxButtons.OK);
@@ -71,20 +82,19 @@ namespace Menus.StaffDoctorInsert
         private void Staff_Doctor_Insert_Load(object sender, EventArgs e)
         {
 
+
+            foreach (District district in (District[])Enum.GetValues(typeof(District)))
+                District_Combo.Items.Add(district);
+            foreach (City city in (City[])Enum.GetValues(typeof(City)))
+                City_Combo.Items.Add(city);
+            foreach (DoctorSpecialty doctorSpecialty in (DoctorSpecialty[])Enum.GetValues(typeof(DoctorSpecialty)))
+                Specialty_Combo.Items.Add(doctorSpecialty);
+
+            for (int i = 1; i <= 100; i++)
             {
-                foreach (District district in (District[])Enum.GetValues(typeof(District)))
-                    District_Combo.Items.Add(district);
-                foreach (City city in (City[])Enum.GetValues(typeof(City)))
-                    City_Combo.Items.Add(city);
-                foreach (DoctorSpecialty doctorSpecialty in (DoctorSpecialty[])Enum.GetValues(typeof(DoctorSpecialty)))
-                    Specialty_Combo.Items.Add(doctorSpecialty);
-
-                for (int i = 1; i <= 100; i++)
-                {
-                    Age_Combo.Items.Add(i);
-                }
-
+                Age_Combo.Items.Add(i);
             }
+
         }
 
         private void BACK_Hospital_View_Click(object sender, EventArgs e)
