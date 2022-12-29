@@ -20,12 +20,15 @@ namespace Class.CPacient
         /// Overload Contructor of Pacient
         /// </summary>
 
+        private static int idPacient = 0;
+
         public PacientClass(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pccSS, string pdateOfBirth, Status pStatus , string observation, DoctorSpecialty typeIllness)
             : base(pName, pAge, pRue, pDistrict, pCity, pCCNumber, pCCNIF, pCCSNS, pccSS, pdateOfBirth)
         {
 
             this.Status = pStatus;
             this.Observation= observation;
+            this.ID_Pacient = System.Threading.Interlocked.Increment(ref idPacient);
 
         }
 
@@ -40,6 +43,7 @@ namespace Class.CPacient
             this.Doctor= doctor;
             this.Room= room;
             this.TypeIllness= typeIllness;
+            this.ID_Pacient = System.Threading.Interlocked.Increment(ref idPacient);
 
         }
 
@@ -55,6 +59,7 @@ namespace Class.CPacient
             this.Room = room;
             this.TypeIllness = typeIllness;
             this.Visitors= visitors;
+            this.ID_Pacient = System.Threading.Interlocked.Increment(ref idPacient);
 
         }
 
@@ -63,7 +68,7 @@ namespace Class.CPacient
         /// </summary>
         ~PacientClass() { }
 
-
+        public int ID_Pacient { get; set; }
         public Status Status { get; set; }
 
         public string Observation { get; set; }

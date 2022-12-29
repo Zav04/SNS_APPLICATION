@@ -43,6 +43,28 @@ namespace Menus.PacientInsert
             {
                 Age_Combo.Items.Add(i);
             }
+            Text_Doctor.Visible = false;
+            Text_Doctor.Enabled= false;
+            Text_Hospital.Enabled= false;
+            Text_Hospital.Visible = false;
+            Text_District.Enabled= false;
+            Text_District.Visible = false;
+            Text_City.Enabled = false;
+            Text_City.Visible = false;
+            Text_Room.Enabled = false;
+            Text_Room.Visible = false;
+            label14.Enabled=false;
+            label14.Visible = false;
+            label15.Enabled=false;
+            label15.Visible = false;
+            label16.Enabled=false;
+            label16.Visible = false;
+            label17.Enabled=false;
+            label17.Visible = false;
+            label18.Enabled=false;
+            label18.Visible = false;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,6 +137,17 @@ namespace Menus.PacientInsert
                     Doctor doctor = (Doctor)hospitalanddoctor[1];
                     Class_Room room = (Class_Room)hospitalanddoctor[2];
 
+                    Text_Doctor.Visible = true;
+                    Text_Hospital.Visible = true;
+                    Text_District.Visible = true;
+                    Text_City.Visible = true;
+                    Text_Room.Visible = true;
+                    label14.Visible = true;
+                    label15.Visible = true;
+                    label16.Visible = true;
+                    label17.Visible = true;
+                    label18.Visible = true;
+
                     PacientClass newInsert = new PacientClass(
                                        Name_Text.Text,
                                        uint.Parse(Age_Combo.SelectedItem.ToString()),
@@ -133,11 +166,24 @@ namespace Menus.PacientInsert
                                        doctor,
                                        room);
 
+                    Text_Doctor.Text = doctor.Name;
+                    Text_Hospital.Text = hospital.Name;
+                    Text_District.Text = hospital.District.ToString();
+                    Text_City.Text = hospital.City.ToString();
+                    Text_Room.Text = room.Id.ToString();
+
+                    Text_Doctor.ReadOnly = true;
+                    Text_Hospital.ReadOnly = true;
+                    Text_District.ReadOnly = true;
+                    Text_City.ReadOnly = true;
+                    Text_Room.ReadOnly = true;
+
                     listofPacientObejects = Class_Manager.GetDataOfPacient();
                     listofPacientObejects.Add(newInsert);
 
                     room.Busy = true;
-                    doctor.ListOfPacient.Add(newInsert);
+
+                    doctor.SetPacient(newInsert);
 
                     MessageBox.Show("PACIENT INSERTED", "WARNING", MessageBoxButtons.OK);
                     Name_Text.ResetText();

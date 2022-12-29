@@ -22,12 +22,12 @@ namespace Class.ManagerOfData
         public static void ReadDataOfDoctors()
         {
 
-            managerOfDoctors.Add(new Doctor("Doctor1", 28,"Rua Teste 1",District.Braga,City.Guimarães,"213281931sc",123455689, 123455689, 123455689, "22/08/1990", DoctorSpecialty.Cardiologist));
-            managerOfDoctors.Add(new Doctor("Doctor2", 35, "Rua Teste 2", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/12/1984", DoctorSpecialty.Dermatology));
-            managerOfDoctors.Add(new Doctor("Doctor3", 29, "Rua Teste 3", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "16/01/1992", DoctorSpecialty.GeneralMedicine));
-            managerOfDoctors.Add(new Doctor("Doctor4", 45, "Rua Teste 4", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1978", DoctorSpecialty.Orthopedics));
-            managerOfDoctors.Add(new Doctor("Doctor5", 56, "Rua Teste 5", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1966", DoctorSpecialty.Oncology));
-            managerOfDoctors.Add(new Doctor("Doctor6", 62, "Rua Teste 6", District.Braga, City.Guimarães, "213281931sc", 123455689, 123455689, 123455689, "06/06/1961", DoctorSpecialty.Neurology));
+            managerOfDoctors.Add(new Doctor("Doctor1", 28,"Rua Teste 1",District.Braga,City.Guimarães, "123455689sc", 123455689, 123455689, 123455689, "22/08/1990", DoctorSpecialty.Cardiologist));
+            managerOfDoctors.Add(new Doctor("Doctor2", 35, "Rua Teste 2", District.Braga, City.Guimarães, "123455689sc", 123455689, 123455689, 123455689, "06/12/1984", DoctorSpecialty.Dermatology));
+            managerOfDoctors.Add(new Doctor("Doctor3", 29, "Rua Teste 3", District.Braga, City.Guimarães, "123455689sc", 123455689, 123455689, 123455689, "16/01/1992", DoctorSpecialty.GeneralMedicine));
+            managerOfDoctors.Add(new Doctor("Doctor4", 45, "Rua Teste 4", District.Braga, City.Guimarães, "123455689sc", 123455689, 123455689, 123455689, "06/06/1978", DoctorSpecialty.Orthopedics));
+            managerOfDoctors.Add(new Doctor("Doctor5", 56, "Rua Teste 5", District.Braga, City.Guimarães, "123455689sc", 123455689, 123455689, 123455689, "06/06/1966", DoctorSpecialty.Oncology));
+            managerOfDoctors.Add(new Doctor("Doctor6", 62, "Rua Teste 6", District.Braga, City.Guimarães, "123455689sc", 123455689, 123455689, 123455689, "06/06/1961", DoctorSpecialty.Neurology));
 
         }
 

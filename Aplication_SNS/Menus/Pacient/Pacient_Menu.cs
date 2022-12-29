@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menus.PacientInsert;
 using Menus.MainMenu;
+using Menus.PacientEdit;
 
 namespace Menus.Pacient
 {
@@ -33,7 +34,9 @@ namespace Menus.Pacient
 
         private void Pacient_Edit_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Pacient_Edit new_edit= new Pacient_Edit();
+            new_edit.Show();
         }
 
         private void Pacient_Dismissal_Click(object sender, EventArgs e)

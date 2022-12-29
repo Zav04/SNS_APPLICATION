@@ -59,6 +59,16 @@
             this.Status_Combo = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.Combo_DISEASE = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Text_Room = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Text_Doctor = new System.Windows.Forms.TextBox();
+            this.Text_Hospital = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Text_District = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Text_City = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -332,12 +342,107 @@
             this.Combo_DISEASE.Size = new System.Drawing.Size(280, 23);
             this.Combo_DISEASE.TabIndex = 84;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(1084, 440);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(200, 30);
+            this.label14.TabIndex = 91;
+            this.label14.Text = "NUMBER OF ROOM";
+            // 
+            // Text_Room
+            // 
+            this.Text_Room.Location = new System.Drawing.Point(1309, 447);
+            this.Text_Room.Name = "Text_Room";
+            this.Text_Room.Size = new System.Drawing.Size(280, 23);
+            this.Text_Room.TabIndex = 90;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(1079, 323);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(205, 30);
+            this.label15.TabIndex = 88;
+            this.label15.Text = "NAME OF HOSPITAL";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(1090, 281);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(194, 30);
+            this.label16.TabIndex = 87;
+            this.label16.Text = "NAME OF DOCTOR";
+            // 
+            // Text_Doctor
+            // 
+            this.Text_Doctor.Location = new System.Drawing.Point(1309, 288);
+            this.Text_Doctor.Name = "Text_Doctor";
+            this.Text_Doctor.Size = new System.Drawing.Size(280, 23);
+            this.Text_Doctor.TabIndex = 86;
+            // 
+            // Text_Hospital
+            // 
+            this.Text_Hospital.Location = new System.Drawing.Point(1309, 332);
+            this.Text_Hospital.Name = "Text_Hospital";
+            this.Text_Hospital.Size = new System.Drawing.Size(280, 23);
+            this.Text_Hospital.TabIndex = 92;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label17.Location = new System.Drawing.Point(1059, 363);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(225, 30);
+            this.label17.TabIndex = 94;
+            this.label17.Text = "DISTRICT OF HOSPTAL";
+            // 
+            // Text_District
+            // 
+            this.Text_District.Location = new System.Drawing.Point(1309, 370);
+            this.Text_District.Name = "Text_District";
+            this.Text_District.Size = new System.Drawing.Size(280, 23);
+            this.Text_District.TabIndex = 93;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label18.Location = new System.Drawing.Point(1103, 401);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(181, 30);
+            this.label18.TabIndex = 96;
+            this.label18.Text = "CITY OF HOSPTAL";
+            // 
+            // Text_City
+            // 
+            this.Text_City.Location = new System.Drawing.Point(1309, 408);
+            this.Text_City.Name = "Text_City";
+            this.Text_City.Size = new System.Drawing.Size(280, 23);
+            this.Text_City.TabIndex = 95;
+            // 
             // Pacient_Insert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.Text_City);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.Text_District);
+            this.Controls.Add(this.Text_Hospital);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.Text_Room);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.Text_Doctor);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.Combo_DISEASE);
             this.Controls.Add(this.label12);
@@ -412,5 +517,15 @@
         private ComboBox Status_Combo;
         private Label label13;
         private ComboBox Combo_DISEASE;
+        private Label label14;
+        private TextBox Text_Room;
+        private Label label15;
+        private Label label16;
+        private TextBox Text_Doctor;
+        private TextBox Text_Hospital;
+        private Label label17;
+        private TextBox Text_District;
+        private Label label18;
+        private TextBox Text_City;
     }
 }
