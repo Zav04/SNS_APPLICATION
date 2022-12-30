@@ -17,6 +17,7 @@ using System.Windows.Forms;
 using Class.CHospital;
 using System.Windows.Documents;
 using Class.CRoom;
+using DoctorSpecialtys;
 
 namespace Menus.PacientInsert
 {
@@ -121,6 +122,7 @@ namespace Menus.PacientInsert
 
             room.Busy = true;
 
+            hospital.SetPacientToHospital(newInsert);
             doctor.SetPacient(newInsert);
 
             MessageBox.Show("PACIENT INSERTED", "WARNING", MessageBoxButtons.OK);

@@ -13,10 +13,10 @@ namespace Class.CRoom
     public class Class_Room
     {
 
-        private static int idRoom = 0;
-        public Class_Room(bool busy=false)
+ 
+        public Class_Room(int idRoom,bool busy=false)
         {
-            this.Id = System.Threading.Interlocked.Increment(ref idRoom);
+            this.Id=idRoom;
             this.Busy = busy;
 
         }

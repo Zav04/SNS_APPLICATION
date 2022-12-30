@@ -8,6 +8,7 @@ using Portugal.District;
 using System;
 using System.Collections.Generic;
 using System.Windows.Documents;
+using DoctorSpecialtys;
 
 
 namespace Class.ManagerOfData
@@ -68,9 +69,11 @@ namespace Class.ManagerOfData
             managerOfPacients.Add(new PacientClass("Pacient1", 33, "Rua Teste 1", District.Braga, City.Guimarães, "123456789ZZ", 123456789101, 123456789101,
                                   123456789101, "05/05/1989", Status.EmergentPatient, "Ritmia", DoctorSpecialty.Cardiologist, managerOfHospitals[0], managerOfDoctors[0], managerOfHospitals[0].Rooms[0]));
 
-            managerOfHospitals[0].Rooms[0].Busy = true;
 
-            managerOfPacients.Add(new PacientClass("Pacient1", 33, "Rua Teste 1", District.Braga, City.Guimarães, "123456789ZZ", 123456789101, 123456789101,
+            managerOfHospitals[0].Rooms[0].Busy = true;
+            managerOfHospitals[0].SetPacientToHospital(managerOfPacients[0]);
+
+            managerOfPacients.Add(new PacientClass("Pacient2", 33, "Rua Teste 2", District.Braga, City.Guimarães, "123456789ZZ", 123456789101, 123456789101,
                                   123456789101, "05/05/1989", Status.EmergentPatient, "Ritmia", DoctorSpecialty.Cardiologist));
 
 

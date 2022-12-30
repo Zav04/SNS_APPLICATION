@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Class.CHospital;
 using Class.CDoctor;
+using DoctorSpecialtys;
 
 
 

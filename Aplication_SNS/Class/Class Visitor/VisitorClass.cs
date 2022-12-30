@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Visitor.DegreeOfKinship;
 using Class.CDoctor;
 
-namespace Class
+namespace Class.Visitor
 {
     public class VisitorClass: ClassBase_Persons
     {

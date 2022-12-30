@@ -13,6 +13,8 @@ using Menus.PacientEdit;
 using Menus.PacientDemiss;
 using Menus.PacientView;
 using Menus.PacientWaitingList;
+using Menus.PacientTransfer;
+using Menus.PacientVisitor;
 
 namespace Menus.Pacient
 {
@@ -58,11 +60,16 @@ namespace Menus.Pacient
 
         private void Pacient_Transfer_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Pacient_Transfer pacient_Transfer = new Pacient_Transfer();
+            pacient_Transfer.Show();
         }
 
         private void Pacient_ListOfVisitor_Click(object sender, EventArgs e)
         {
+            this.Close();
+            Pacient_Visitor pacient_Visitor= new Pacient_Visitor();
+            pacient_Visitor.Show();
 
         }
 

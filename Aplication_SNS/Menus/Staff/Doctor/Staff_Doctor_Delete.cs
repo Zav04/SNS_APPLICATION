@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Menus.StaffDoctor;
+using DoctorSpecialtys;
 
 namespace Menus.StaffDoctorDelete
 {

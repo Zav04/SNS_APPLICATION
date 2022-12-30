@@ -9,6 +9,7 @@ using Menus.FHospital;
 using Class.ManagerOfData;
 using Menus.StaffMain;
 using Menus.Pacient;
+using Menus.Reception;
 
 
 
@@ -29,7 +30,9 @@ namespace Menus.MainMenu
 
         private void report_MainMenu_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Reception_Menu reception_Menu = new Reception_Menu();
+            reception_Menu.Show();
         }
 
         private void pacient_MainMenu_Click(object sender, EventArgs e)

@@ -10,6 +10,8 @@ using Class.CHospital;
 using Class.CRoom;
 using Class.CDoctor;
 using Pacient.Status;
+using Class.Visitor;
+using DoctorSpecialtys;
 
 namespace Class.CPacient
 {
@@ -83,10 +85,6 @@ namespace Class.CPacient
 
         public List<VisitorClass> Visitors { get; set; }
 
-        public void InsertVisitorsInList(List<VisitorClass> visitors)
-        {
-            this.Visitors.AddRange(visitors);
-        }
 
         public void DeleteVisitorFromList(int idVisitor)
         {
@@ -97,12 +95,19 @@ namespace Class.CPacient
         public void DeleteVisitorFromList(string nameVisitor)
         {
             Visitors.RemoveAll(del => (del.Name == nameVisitor));
-
         }
 
         public void InsertOneVisitorToList(VisitorClass visitors)
         {
-            this.Visitors.Add(visitors);
+            if (this.Visitors == null)
+            {
+                this.Visitors = new List<VisitorClass>();
+                this.Visitors.Add(visitors);
+            }
+            else
+            {
+                this.Visitors.Add(visitors);
+            }
 
         }
 

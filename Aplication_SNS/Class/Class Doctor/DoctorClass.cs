@@ -6,17 +6,10 @@ using Portugal.City;
 using Class.CHospital;
 using System.Collections.Generic;
 using Class.CPacient;
+using DoctorSpecialtys;
 
 namespace Class.CDoctor
 {
-
-    public enum DoctorSpecialty
-    {
-        Cardiologist,GeneralMedicine, Orthopedics, Pediatrician,
-        Otolaryngologist, Dermatology, Oncology, Psychiatry, Neurology
-
-    }
-
 
     public class Doctor : ClassBase_Persons
     {

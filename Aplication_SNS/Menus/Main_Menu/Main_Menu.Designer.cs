@@ -152,11 +152,11 @@ namespace Menus.MainMenu
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(1266, 653);
+            this.label4.Location = new System.Drawing.Point(1233, 653);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(275, 74);
+            this.label4.Size = new System.Drawing.Size(335, 74);
             this.label4.TabIndex = 18;
-            this.label4.Text = "REPORTS";
+            this.label4.Text = "RECEPTION";
             // 
             // button1
             // 
