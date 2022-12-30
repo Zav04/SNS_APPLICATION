@@ -44,32 +44,142 @@ namespace Menus.PacientInsert
                 Age_Combo.Items.Add(i);
             }
             Text_Doctor.Visible = false;
-            Text_Doctor.Enabled= false;
-            Text_Hospital.Enabled= false;
+            Text_Doctor.Enabled = false;
+            Text_Hospital.Enabled = false;
             Text_Hospital.Visible = false;
-            Text_District.Enabled= false;
+            Text_District.Enabled = false;
             Text_District.Visible = false;
             Text_City.Enabled = false;
             Text_City.Visible = false;
             Text_Room.Enabled = false;
             Text_Room.Visible = false;
-            label14.Enabled=false;
+            label14.Enabled = false;
             label14.Visible = false;
-            label15.Enabled=false;
+            label15.Enabled = false;
             label15.Visible = false;
-            label16.Enabled=false;
+            label16.Enabled = false;
             label16.Visible = false;
-            label17.Enabled=false;
+            label17.Enabled = false;
             label17.Visible = false;
-            label18.Enabled=false;
+            label18.Enabled = false;
             label18.Visible = false;
 
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Inserted(ref object[] list)
         {
             List<PacientClass> listofPacientObejects;
+
+            Hospital hospital = (Hospital)list[0];
+            Doctor doctor = (Doctor)list[1];
+            Class_Room room = (Class_Room)list[2];
+
+            Text_Doctor.Visible = true;
+            Text_Hospital.Visible = true;
+            Text_District.Visible = true;
+            Text_City.Visible = true;
+            Text_Room.Visible = true;
+            label14.Visible = true;
+            label15.Visible = true;
+            label16.Visible = true;
+            label17.Visible = true;
+            label18.Visible = true;
+
+            PacientClass newInsert = new PacientClass(
+                               Name_Text.Text,
+                               uint.Parse(Age_Combo.SelectedItem.ToString()),
+                               Rue_Text.Text,
+                               Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
+                               Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
+                               CCNumber_Text.Text,
+                               ulong.Parse(NIF_Text.Text),
+                               ulong.Parse(SNS_Text.Text),
+                               ulong.Parse(SS_Text.Text),
+                               DOB_Text.Text,
+                               Enum.Parse<Status>(Status_Combo.GetItemText(this.Status_Combo.SelectedItem)),
+                               OBS_Text.Text,
+                               Enum.Parse<DoctorSpecialty>(Combo_DISEASE.GetItemText(this.Combo_DISEASE.SelectedItem)),
+                               hospital,
+                               doctor,
+                               room);
+
+            Text_Doctor.Text = doctor.Name;
+            Text_Hospital.Text = hospital.Name;
+            Text_District.Text = hospital.District.ToString();
+            Text_City.Text = hospital.City.ToString();
+            Text_Room.Text = room.Id.ToString();
+
+            Text_Doctor.ReadOnly = true;
+            Text_Hospital.ReadOnly = true;
+            Text_District.ReadOnly = true;
+            Text_City.ReadOnly = true;
+            Text_Room.ReadOnly = true;
+
+            listofPacientObejects = Class_Manager.GetDataOfPacient();
+            listofPacientObejects.Add(newInsert);
+
+            room.Busy = true;
+
+            doctor.SetPacient(newInsert);
+
+            MessageBox.Show("PACIENT INSERTED", "WARNING", MessageBoxButtons.OK);
+            Name_Text.ResetText();
+            Age_Combo.SelectedIndex = -1;
+            Rue_Text.ResetText();
+            District_Combo.SelectedIndex = -1;
+            City_Combo.SelectedIndex = -1;
+            CCNumber_Text.ResetText();
+            NIF_Text.ResetText();
+            SNS_Text.ResetText();
+            SS_Text.ResetText();
+            DOB_Text.ResetText();
+            Status_Combo.SelectedIndex = -1;
+            Combo_DISEASE.SelectedIndex = -1;
+            OBS_Text.ResetText();
+
+        }
+
+        private void WaitingList()
+        {
+            List<PacientClass> listofPacientObejects;
+
+            PacientClass newInsert = new PacientClass(
+                                   Name_Text.Text,
+                                   uint.Parse(Age_Combo.SelectedItem.ToString()),
+                                   Rue_Text.Text,
+                                   Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
+                                   Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
+                                   CCNumber_Text.Text,
+                                   ulong.Parse(NIF_Text.Text),
+                                   ulong.Parse(SNS_Text.Text),
+                                   ulong.Parse(SS_Text.Text),
+                                   DOB_Text.Text,
+                                   Enum.Parse<Status>(Status_Combo.GetItemText(this.Status_Combo.SelectedItem)),
+                                   OBS_Text.Text,
+                                   Enum.Parse<DoctorSpecialty>(Combo_DISEASE.GetItemText(this.Combo_DISEASE.SelectedItem)));
+
+            listofPacientObejects = Class_Manager.GetDataOfPacient();
+            listofPacientObejects.Add(newInsert);
+
+            Name_Text.ResetText();
+            Age_Combo.SelectedIndex = -1;
+            Rue_Text.ResetText();
+            District_Combo.SelectedIndex = -1;
+            City_Combo.SelectedIndex = -1;
+            CCNumber_Text.ResetText();
+            NIF_Text.ResetText();
+            SNS_Text.ResetText();
+            SS_Text.ResetText();
+            DOB_Text.ResetText();
+            Status_Combo.SelectedIndex = -1;
+            Combo_DISEASE.SelectedIndex = -1;
+            OBS_Text.ResetText();
+            MessageBox.Show("NO HOSPITAL AND DOCTOR AVAILABLE\nPACIENT INSERTED AND IS IN WAITING LIST \nTRY AGAIN LATER", "WARNING", MessageBoxButtons.OK);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
             if (
             String.IsNullOrEmpty(Name_Text.Text) != true &&
@@ -85,120 +195,24 @@ namespace Menus.PacientInsert
             {
 
                 object[] hospitalanddoctor = new object[3];
-                //int indexCounter = 0;
 
                 SelectDistricHospitalAndDoctor(ref hospitalanddoctor);
-
                 if (hospitalanddoctor[0] == null || hospitalanddoctor[1] == null || hospitalanddoctor[2] == null)
                 {
                     SelectHospitalAndDoctor(ref hospitalanddoctor);
                     if (hospitalanddoctor[0] == null || hospitalanddoctor[1] == null || hospitalanddoctor[2] == null)
                     {
-                        PacientClass newInsert = new PacientClass(
-                                   Name_Text.Text,
-                                   uint.Parse(Age_Combo.SelectedItem.ToString()),
-                                   Rue_Text.Text,
-                                   Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
-                                   Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
-                                   CCNumber_Text.Text,
-                                   ulong.Parse(NIF_Text.Text),
-                                   ulong.Parse(SNS_Text.Text),
-                                   ulong.Parse(SS_Text.Text),
-                                   DOB_Text.Text,
-                                   Enum.Parse<Status>(Status_Combo.GetItemText(this.Status_Combo.SelectedItem)),
-                                   OBS_Text.Text,
-                                   Enum.Parse<DoctorSpecialty>(Combo_DISEASE.GetItemText(this.Combo_DISEASE.SelectedItem)));
-
-                        listofPacientObejects = Class_Manager.GetDataOfPacient();
-                        listofPacientObejects.Add(newInsert);
-
-                        Name_Text.ResetText();
-                        Age_Combo.SelectedIndex = -1;
-                        Rue_Text.ResetText();
-                        District_Combo.SelectedIndex = -1;
-                        City_Combo.SelectedIndex = -1;
-                        CCNumber_Text.ResetText();
-                        NIF_Text.ResetText();
-                        SNS_Text.ResetText();
-                        SS_Text.ResetText();
-                        DOB_Text.ResetText();
-                        Status_Combo.SelectedIndex = -1;
-                        Combo_DISEASE.SelectedIndex = -1;
-                        OBS_Text.ResetText();
-                        MessageBox.Show("NO HOSPITAL AND DOCTOR AVAILABLE\nPACIENT INSERTED AND IS IN WAITING LIST \nTRY AGAIN LATER", "WARNING", MessageBoxButtons.OK);
-                        return;
-
+                        WaitingList();
+                    }
+                    else
+                    {
+                        Inserted(ref hospitalanddoctor);
                     }
 
                 }
                 else
                 {
-                    Hospital hospital = (Hospital)hospitalanddoctor[0];
-                    Doctor doctor = (Doctor)hospitalanddoctor[1];
-                    Class_Room room = (Class_Room)hospitalanddoctor[2];
-
-                    Text_Doctor.Visible = true;
-                    Text_Hospital.Visible = true;
-                    Text_District.Visible = true;
-                    Text_City.Visible = true;
-                    Text_Room.Visible = true;
-                    label14.Visible = true;
-                    label15.Visible = true;
-                    label16.Visible = true;
-                    label17.Visible = true;
-                    label18.Visible = true;
-
-                    PacientClass newInsert = new PacientClass(
-                                       Name_Text.Text,
-                                       uint.Parse(Age_Combo.SelectedItem.ToString()),
-                                       Rue_Text.Text,
-                                       Enum.Parse<District>(District_Combo.GetItemText(this.District_Combo.SelectedItem)),
-                                       Enum.Parse<City>(City_Combo.GetItemText(this.City_Combo.SelectedItem)),
-                                       CCNumber_Text.Text,
-                                       ulong.Parse(NIF_Text.Text),
-                                       ulong.Parse(SNS_Text.Text),
-                                       ulong.Parse(SS_Text.Text),
-                                       DOB_Text.Text,
-                                       Enum.Parse<Status>(Status_Combo.GetItemText(this.Status_Combo.SelectedItem)),
-                                       OBS_Text.Text,
-                                       Enum.Parse<DoctorSpecialty>(Combo_DISEASE.GetItemText(this.Combo_DISEASE.SelectedItem)),
-                                       hospital,
-                                       doctor,
-                                       room);
-
-                    Text_Doctor.Text = doctor.Name;
-                    Text_Hospital.Text = hospital.Name;
-                    Text_District.Text = hospital.District.ToString();
-                    Text_City.Text = hospital.City.ToString();
-                    Text_Room.Text = room.Id.ToString();
-
-                    Text_Doctor.ReadOnly = true;
-                    Text_Hospital.ReadOnly = true;
-                    Text_District.ReadOnly = true;
-                    Text_City.ReadOnly = true;
-                    Text_Room.ReadOnly = true;
-
-                    listofPacientObejects = Class_Manager.GetDataOfPacient();
-                    listofPacientObejects.Add(newInsert);
-
-                    room.Busy = true;
-
-                    doctor.SetPacient(newInsert);
-
-                    MessageBox.Show("PACIENT INSERTED", "WARNING", MessageBoxButtons.OK);
-                    Name_Text.ResetText();
-                    Age_Combo.SelectedIndex = -1;
-                    Rue_Text.ResetText();
-                    District_Combo.SelectedIndex = -1;
-                    City_Combo.SelectedIndex = -1;
-                    CCNumber_Text.ResetText();
-                    NIF_Text.ResetText();
-                    SNS_Text.ResetText();
-                    SS_Text.ResetText();
-                    DOB_Text.ResetText();
-                    Status_Combo.SelectedIndex = -1;
-                    Combo_DISEASE.SelectedIndex = -1;
-                    OBS_Text.ResetText();
+                    Inserted(ref hospitalanddoctor);
                 }
             }
             else
@@ -304,7 +318,6 @@ namespace Menus.PacientInsert
                     {
                         if (hospital.Doctors != null)
                         {
-
                             foreach (Doctor doctor in hospital.Doctors)
                             {
                                 if (doctor.Specialty.ToString() == DoctorSpecialty.GeneralMedicine.ToString())

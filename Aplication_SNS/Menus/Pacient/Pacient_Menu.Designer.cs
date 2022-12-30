@@ -39,6 +39,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Pacient_Transfer = new System.Windows.Forms.Button();
             this.Pacient_ListOfVisitor = new System.Windows.Forms.Button();
+            this.Pacient_Waiting = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +134,7 @@
             // Pacient_Transfer
             // 
             this.Pacient_Transfer.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Pacient_Transfer.Location = new System.Drawing.Point(614, 580);
+            this.Pacient_Transfer.Location = new System.Drawing.Point(614, 679);
             this.Pacient_Transfer.Name = "Pacient_Transfer";
             this.Pacient_Transfer.Size = new System.Drawing.Size(480, 90);
             this.Pacient_Transfer.TabIndex = 25;
@@ -144,7 +145,7 @@
             // Pacient_ListOfVisitor
             // 
             this.Pacient_ListOfVisitor.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Pacient_ListOfVisitor.Location = new System.Drawing.Point(614, 703);
+            this.Pacient_ListOfVisitor.Location = new System.Drawing.Point(614, 787);
             this.Pacient_ListOfVisitor.Name = "Pacient_ListOfVisitor";
             this.Pacient_ListOfVisitor.Size = new System.Drawing.Size(480, 90);
             this.Pacient_ListOfVisitor.TabIndex = 26;
@@ -152,12 +153,24 @@
             this.Pacient_ListOfVisitor.UseVisualStyleBackColor = true;
             this.Pacient_ListOfVisitor.Click += new System.EventHandler(this.Pacient_ListOfVisitor_Click);
             // 
+            // Pacient_Waiting
+            // 
+            this.Pacient_Waiting.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Pacient_Waiting.Location = new System.Drawing.Point(613, 568);
+            this.Pacient_Waiting.Name = "Pacient_Waiting";
+            this.Pacient_Waiting.Size = new System.Drawing.Size(480, 90);
+            this.Pacient_Waiting.TabIndex = 27;
+            this.Pacient_Waiting.Text = "WAITING PATIENT LIST";
+            this.Pacient_Waiting.UseVisualStyleBackColor = true;
+            this.Pacient_Waiting.Click += new System.EventHandler(this.Pacient_Waiting_Click);
+            // 
             // Pacient_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.Pacient_Waiting);
             this.Controls.Add(this.Pacient_ListOfVisitor);
             this.Controls.Add(this.Pacient_Transfer);
             this.Controls.Add(this.BACK_Hospital_Menu);
@@ -193,5 +206,6 @@
         private PictureBox pictureBox2;
         private Button Pacient_Transfer;
         private Button Pacient_ListOfVisitor;
+        private Button Pacient_Waiting;
     }
 }

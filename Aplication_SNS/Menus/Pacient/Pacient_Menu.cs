@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Menus.PacientInsert;
 using Menus.MainMenu;
 using Menus.PacientEdit;
+using Menus.PacientDemiss;
+using Menus.PacientView;
+using Menus.PacientWaitingList;
 
 namespace Menus.Pacient
 {
@@ -41,12 +44,16 @@ namespace Menus.Pacient
 
         private void Pacient_Dismissal_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Pacient_Demiss pacientDemiss = new Pacient_Demiss();
+            pacientDemiss.Show();
         }
 
         private void Pacient_View_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Pacient_View pacientView = new Pacient_View();
+            pacientView.Show();
         }
 
         private void Pacient_Transfer_Click(object sender, EventArgs e)
@@ -64,6 +71,14 @@ namespace Menus.Pacient
             this.Close();
             Main_Menu main_Menu= new Main_Menu();
             main_Menu.Show();
+        }
+
+        private void Pacient_Waiting_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Pacient_Waiting_List pacient_Waiting_List= new Pacient_Waiting_List();
+            pacient_Waiting_List.Show();
+
         }
     }
 }

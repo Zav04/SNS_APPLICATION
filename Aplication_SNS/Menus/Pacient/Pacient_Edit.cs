@@ -130,7 +130,7 @@ namespace Menus.PacientEdit
                 }
             }
             else
-                MessageBox.Show("SELECT A LINE TO EDIT A HOSPITAL FROM APLICATION", "WARNING", MessageBoxButtons.OK);
+                MessageBox.Show("SELECT A LINE TO EDIT A PACIENT FROM APLICATION", "WARNING", MessageBoxButtons.OK);
         }
 
         private void Back_Hospital_Edit_Click(object sender, EventArgs e)

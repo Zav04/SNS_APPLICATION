@@ -2,6 +2,7 @@ using Class.CDoctor;
 using Class.CHospital;
 using Class.CNurse;
 using Class.CPacient;
+using Pacient.Status;
 using Portugal.City;
 using Portugal.District;
 using System;
@@ -63,6 +64,15 @@ namespace Class.ManagerOfData
 
         public static void ReadDataOfPacient()
         {
+
+            managerOfPacients.Add(new PacientClass("Pacient1", 33, "Rua Teste 1", District.Braga, City.Guimarães, "123456789ZZ", 123456789101, 123456789101,
+                                  123456789101, "05/05/1989", Status.EmergentPatient, "Ritmia", DoctorSpecialty.Cardiologist, managerOfHospitals[0], managerOfDoctors[0], managerOfHospitals[0].Rooms[0]));
+
+            managerOfHospitals[0].Rooms[0].Busy = true;
+
+            managerOfPacients.Add(new PacientClass("Pacient1", 33, "Rua Teste 1", District.Braga, City.Guimarães, "123456789ZZ", 123456789101, 123456789101,
+                                  123456789101, "05/05/1989", Status.EmergentPatient, "Ritmia", DoctorSpecialty.Cardiologist));
+
 
         }
 
