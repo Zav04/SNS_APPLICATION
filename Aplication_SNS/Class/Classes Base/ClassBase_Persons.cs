@@ -12,7 +12,6 @@ namespace Class.CPerson
     public class ClassBase_Persons
     {
        
-
         public ClassBase_Persons(string pName, uint pAge, string pRue, District pDistrict, City pCity, string pCCNumber, ulong pCCNIF, ulong pCCSNS, ulong pCCSS, string pdateOfBirth) 
         {
             this.Name = pName;
@@ -26,7 +25,6 @@ namespace Class.CPerson
             this.CCSS = pCCSS;
             this.DateOfBirth = pdateOfBirth;
         }
-
 
         /// <summary>
         /// Destructor of object
@@ -83,19 +81,6 @@ namespace Class.CPerson
         /// Propertie Date of Birth
         /// </summary>
         public string DateOfBirth { get; set; }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
